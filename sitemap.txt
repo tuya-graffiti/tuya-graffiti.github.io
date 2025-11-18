@@ -1,3 +1,4 @@
+https://tuya-graffiti.github.io/2025/11/19/cs50-w3/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w7/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w8/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w9/
@@ -5,7 +6,6 @@ https://tuya-graffiti.github.io/2025/11/19/cs50-w6/
 https://tuya-graffiti.github.io/2025/11/17/cs50-w0/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w5/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w4/
-https://tuya-graffiti.github.io/2025/11/19/cs50-w3/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w2/
 https://tuya-graffiti.github.io/2025/11/18/cs50-w1/
 https://tuya-graffiti.github.io/2025/11/18/fors/
