@@ -1,3 +1,4 @@
+https://tuya-graffiti.github.io/2025/11/18/fors/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w3/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w7/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w8/
@@ -8,7 +9,6 @@ https://tuya-graffiti.github.io/2025/11/19/cs50-w5/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w4/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w2/
 https://tuya-graffiti.github.io/2025/11/18/cs50-w1/
-https://tuya-graffiti.github.io/2025/11/18/fors/
 https://tuya-graffiti.github.io/2025/11/17/MARL/
 https://tuya-graffiti.github.io/2025/11/17/fory/
 https://tuya-graffiti.github.io/2025/11/17/OpenManus/
