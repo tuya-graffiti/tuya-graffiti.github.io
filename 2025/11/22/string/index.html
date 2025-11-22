@@ -27,7 +27,7 @@
 <meta property="og:description" content="来源:华为od题库 HJ1 字符串最后一个单词的长度简单描述对于给定的若干个单词组成的句子，每个单词均由大小写字母混合构成，单词间使用单个空格分隔。输出最后一个单词的长度。输入描述：在一行上输入若干个字符串，每个字符串代表一个单词，组成给定的句子。除此之外，保证每个单词非空，由大小写字母混合构成，且总字符长度不超过10**3输出描述：在一行上输出一个整数，代表最后一个单词的长度。 1234impo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-11-22T12:28:55.000Z">
-<meta property="article:modified_time" content="2025-11-22T13:21:51.273Z">
+<meta property="article:modified_time" content="2025-11-22T14:36:58.830Z">
 <meta property="article:author" content="Yeah">
 <meta property="article:tag" content="CS">
 <meta property="article:tag" content="字符串">
@@ -214,7 +214,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-11-22 20:28:55 / Modified: 21:21:51" itemprop="dateCreated datePublished" datetime="2025-11-22T20:28:55+08:00">2025-11-22</time>
+      <time title="Created: 2025-11-22 20:28:55 / Modified: 22:36:58" itemprop="dateCreated datePublished" datetime="2025-11-22T20:28:55+08:00">2025-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -254,7 +254,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>()</span><br><span class="line">c = <span class="built_in">input</span>()</span><br><span class="line"><span class="comment"># 处理s</span></span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> char <span class="keyword">in</span> s:</span><br><span class="line">    <span class="keyword">if</span> c.isdigit():</span><br><span class="line">        <span class="keyword">if</span> c==char:</span><br><span class="line">            num +=<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> c.lower() == char.lower():</span><br><span class="line">            num+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"><span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure>
 
-<h2 id="HJ3-字符串分隔"><a href="#HJ3-字符串分隔" class="headerlink" title="HJ3 字符串分隔"></a>HJ3 字符串分隔</h2><p><strong>描述</strong><br>对于给定的由小写字母和数字混合构成的字符串s，你需要按每8个字符换一行的方式书写它，具体地:</p>
+<h2 id="HJ3-字符串分隔"><a href="#HJ3-字符串分隔" class="headerlink" title="HJ3 字符串分隔"></a>HJ3 字符串分隔</h2><p><strong>简单</strong><br><strong>描述</strong><br>对于给定的由小写字母和数字混合构成的字符串s，你需要按每8个字符换一行的方式书写它，具体地:</p>
 <ul>
 <li>书写前8个字符，换行;</li>
 <li>书写接下来8个字符，换行;</li>
@@ -284,8 +284,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/11/22/python/" rel="next" title="framework">
-                  framework <i class="fa fa-angle-right"></i>
+                <a href="/2025/11/22/python/" rel="next" title="python base">
+                  python base <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
