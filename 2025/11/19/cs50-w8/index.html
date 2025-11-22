@@ -19,16 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"tuya-graffiti.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="特性&#x2F;维度 HTML &amp; CSS JavaScript &amp; Python    语言类型 标记语言 &#x2F; 样式表 编程语言 &#x2F; 脚本语言   核心职责 结构与表现 逻辑与行为   运行环境 客户端 (几乎 exclusively 在用户浏览器中) JavaScript: 主要在客户端，也可在服务端 (Node.js)Python: 主要在服务端">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Week8 front-end">
 <meta property="og:url" content="https://tuya-graffiti.github.io/2025/11/19/cs50-w8/index.html">
 <meta property="og:site_name" content="Yeah的记录栈">
+<meta property="og:description" content="特性&#x2F;维度 HTML &amp; CSS JavaScript &amp; Python    语言类型 标记语言 &#x2F; 样式表 编程语言 &#x2F; 脚本语言   核心职责 结构与表现 逻辑与行为   运行环境 客户端 (几乎 exclusively 在用户浏览器中) JavaScript: 主要在客户端，也可在服务端 (Node.js)Python: 主要在服务端">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tuya-graffiti.github.io/2025/11/19/cs50-w8/cs50Week8Slide065.png">
 <meta property="article:published_time" content="2025-11-18T16:18:25.000Z">
-<meta property="article:modified_time" content="2025-11-18T16:25:37.079Z">
+<meta property="article:modified_time" content="2025-11-22T08:59:40.078Z">
 <meta property="article:author" content="Yeah">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tuya-graffiti.github.io/2025/11/19/cs50-w8/cs50Week8Slide065.png">
 
 
 <link rel="canonical" href="https://tuya-graffiti.github.io/2025/11/19/cs50-w8/">
@@ -116,7 +120,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -129,6 +133,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Routers"><span class="nav-number">1.</span> <span class="nav-text">Routers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS"><span class="nav-number">2.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP"><span class="nav-number">3.</span> <span class="nav-text">DHCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">4.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">5.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">7.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#framework"><span class="nav-number">8.</span> <span class="nav-text">framework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS"><span class="nav-number">9.</span> <span class="nav-text">JS</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,9 +212,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-11-19 00:18:25 / Modified: 00:25:37" itemprop="dateCreated datePublished" datetime="2025-11-19T00:18:25+08:00">2025-11-19</time>
+      <time title="Created: 2025-11-19 00:18:25" itemprop="dateCreated datePublished" datetime="2025-11-19T00:18:25+08:00">2025-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-11-22 16:59:40" itemprop="dateModified" datetime="2025-11-22T16:59:40+08:00">2025-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -234,7 +245,52 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><table>
+<thead>
+<tr>
+<th align="left">特性&#x2F;维度</th>
+<th align="left">HTML &amp; CSS</th>
+<th align="left">JavaScript &amp; Python</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>语言类型</strong></td>
+<td align="left">标记语言 &#x2F; 样式表</td>
+<td align="left">编程语言 &#x2F; 脚本语言</td>
+</tr>
+<tr>
+<td align="left"><strong>核心职责</strong></td>
+<td align="left">结构与表现</td>
+<td align="left">逻辑与行为</td>
+</tr>
+<tr>
+<td align="left"><strong>运行环境</strong></td>
+<td align="left">客户端 (几乎 exclusively 在用户浏览器中)</td>
+<td align="left"><strong>JavaScript</strong>: 主要在客户端，也可在服务端 (Node.js)<br><strong>Python</strong>: 主要在服务端</td>
+</tr>
+</tbody></table>
+<h2 id="Routers"><a href="#Routers" class="headerlink" title="Routers"></a>Routers</h2><p>数据包(Packets)的结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0                   1                   2                   3  </span><br><span class="line">0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 </span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|Version|  IHL  |Type of Service|          Total Length         |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|         Identification        |Flags|      Fragment Offset    |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|  Time to Live |    Protocol   |         Header Checksum       |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                       Source Address                          |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                    Destination Address                        |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                    Options                    |    Padding    |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></pre></td></tr></table></figure>
+<ul>
+<li>further,tcp is used to distinguish web services from one another.For example, is used to denote HTTP and is used to denote HTPPS.These numbers are port numbers .80|443</li>
+<li>When information is sent from one location to another, a source IP address, a destination IP address, and a TCP port number are sent.</li>
+</ul>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><ul>
+<li>It would be very tedious if you needed to remember an IP address to visit a website.</li>
+<li>DNS, or domain name systems, is a collection of servers on the internet that are used to route website addresses like harvard.edu to a specific IP address.</li>
+<li>DNS is simply a table or database that links specific, fully qualified domain names to specific IP addresses.</li>
+</ul>
+<h2 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h2><ul>
+<li>DHCP is a protocol that ascertains the IP address of your device.</li>
+<li>Further, this protocol defines the default gateway and nameservers your device uses.</li>
+</ul>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>&#x2F;</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>层级结构.The browser will read your HTML file top to bottom and left to right.<br><img src="/2025/11/19/cs50-w8/cs50Week8Slide065.png"></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>一种确保用户提供的数据符合特定格式的手段</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>&#x2F;</p>
+<h2 id="framework"><a href="#framework" class="headerlink" title="framework"></a>framework</h2><p>Bootstrap</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p>&#x2F;</p>
+
     </div>
 
     
