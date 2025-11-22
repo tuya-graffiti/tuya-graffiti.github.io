@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tuya-graffiti.github.io/2025/11/22/algorithms/</loc>
+    
+    <lastmod>2025-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/2025/11/22/cs50-w10/</loc>
+    
+    <lastmod>2025-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tuya-graffiti.github.io/2025/11/19/cs50-w8/</loc>
     
     <lastmod>2025-11-22</lastmod>
@@ -14,15 +32,6 @@
     <loc>https://tuya-graffiti.github.io/2025/11/18/fors/</loc>
     
     <lastmod>2025-11-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tuya-graffiti.github.io/2025/11/19/cs50-w3/</loc>
-    
-    <lastmod>2025-11-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,6 +256,27 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://tuya-graffiti.github.io/tags/CS/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/tags/readme/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -307,6 +337,27 @@
   
   <url>
     <loc>https://tuya-graffiti.github.io/categories/MyProject/fory/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/categories/CS/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/categories/CS/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tuya-graffiti.github.io/categories/readme/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
