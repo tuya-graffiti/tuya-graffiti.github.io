@@ -1,3 +1,5 @@
+https://tuya-graffiti.github.io/2025/11/22/string/
+https://tuya-graffiti.github.io/2025/11/22/python/
 https://tuya-graffiti.github.io/2025/11/22/algorithms/
 https://tuya-graffiti.github.io/2025/11/22/cs50-w10/
 https://tuya-graffiti.github.io/2025/11/19/cs50-w8/
@@ -30,6 +32,9 @@ https://tuya-graffiti.github.io/tags/AI-MyProject/
 https://tuya-graffiti.github.io/tags/CS/
 https://tuya-graffiti.github.io/tags/%E7%AE%97%E6%B3%95/
 https://tuya-graffiti.github.io/tags/readme/
+https://tuya-graffiti.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/
+https://tuya-graffiti.github.io/tags/Python/
+https://tuya-graffiti.github.io/tags/%E8%AF%AD%E8%A8%80/
 https://tuya-graffiti.github.io/categories/AI/
 https://tuya-graffiti.github.io/categories/blog/
 https://tuya-graffiti.github.io/categories/AI/CS50/
@@ -42,3 +47,6 @@ https://tuya-graffiti.github.io/categories/MyProject/fory/
 https://tuya-graffiti.github.io/categories/CS/
 https://tuya-graffiti.github.io/categories/CS/%E7%AE%97%E6%B3%95/
 https://tuya-graffiti.github.io/categories/readme/
+https://tuya-graffiti.github.io/categories/CS/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/
+https://tuya-graffiti.github.io/categories/CS/%E8%AF%AD%E8%A8%80/
+https://tuya-graffiti.github.io/categories/CS/%E8%AF%AD%E8%A8%80/Python/
