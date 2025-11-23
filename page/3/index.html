@@ -138,13 +138,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -166,6 +166,511 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/17/cs50-w0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/17/cs50-w0/" class="post-title-link" itemprop="url">Week0 0</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-17 18:56:06" itemprop="dateCreated datePublished" datetime="2025-11-17T18:56:06+08:00">2025-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-19 00:22:18" itemprop="dateModified" datetime="2025-11-19T00:22:18+08:00">2025-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/CS50/" itemprop="url" rel="index"><span itemprop="name">CS50</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Week-0"><a href="#Week-0" class="headerlink" title="Week 0"></a>Week 0</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>ASCII | unicode | RGB : &#x2F;</p>
+<h3 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h3><p>An algorithm is a step-by-step set of instructions to solve a problem.</p>
+<h3 id="Pseudocode"><a href="#Pseudocode" class="headerlink" title="Pseudocode"></a>Pseudocode</h3><ul>
+<li><p>The ability to create pseudocode is central to one’s success in both this class and in computer programming.</p>
+</li>
+<li><p>pseudocoding is such an important skill for at least two reasons.First,when you pseudocode before you create formal code,it allows you to think through the logic of your problem in advance.Second,when you pseudocode ,you can layer provide this information to others that are seeking to understand your coding decisions and how your code works.</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1 Pick up phone book </span><br><span class="line">2 Open to middle of phone book</span><br><span class="line">3 Look at page</span><br><span class="line">4 IF person is on page</span><br><span class="line">5	  Call person</span><br><span class="line">6 Else if person is earlier in book</span><br><span class="line">7	  Open to middle of left half of book</span><br><span class="line">8	  Go back to line 3</span><br><span class="line">9 Else if person is later in book</span><br><span class="line">10 	  Open to middle of right half of book</span><br><span class="line">11    Go back to line 3</span><br><span class="line">12Else</span><br><span class="line">13	  Quit</span><br></pre></td></tr></table></figure>
+
+<p>Notice that language within our pseudocode has some unique features.</p>
+<ul>
+<li>First, some of these lines begin with verbs like <em>pick up,</em> <em>open,</em> <em>look at.</em> Later, we will call these <em>functions</em>.</li>
+<li>Second, notice that some lines include statements like or These are called <em>conditionals</em>.<code>if``else if.</code></li>
+<li>Third, notice how there are expressions that can be stated as <em>true</em> or <em>false,</em> such as “person is earlier in the book.” We call these <em>boolean expressions</em>.</li>
+<li>Finally, notice how there are statements like “go back to line 3.” We call these <em>loops</em>.</li>
+<li>These building blocks are the fundamentals of programming.</li>
+</ul>
+<p><img src="/2025/11/17/cs50-w0/1763380274272.png" alt="1763380274272"></p>
+<h2 id="scratch"><a href="#scratch" class="headerlink" title="scratch"></a>scratch</h2><p>which can help us build mind model .有中文。</p>
+<h3 id="Oscartime"><a href="#Oscartime" class="headerlink" title="Oscartime"></a><a target="_blank" rel="noopener" href="https://cs50.harvard.edu/x/notes/0/#oscartime">Oscartime</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">PROGRAM Oscartime</span><br><span class="line">Beigin </span><br><span class="line">	// Initialization Phase</span><br><span class="line">	WHEN green flag clicked:</span><br><span class="line">		// Initialize Oscar character </span><br><span class="line">		Oscar.switchCoustumeTo(oscar1)</span><br><span class="line">		SET score = 0</span><br><span class="line">		</span><br><span class="line">		// Oscar interaction logic </span><br><span class="line">		Forever:</span><br><span class="line">			IF oscar.touching(mousePointer) THEN</span><br><span class="line">				Oscar.switchCoustumeTo(oscar2)</span><br><span class="line">			ELSE</span><br><span class="line">				Oscar.switchCostumeTo(oscar1)</span><br><span class="line">				</span><br><span class="line">	// Trash falling system</span><br><span class="line">	WHEN green flag clicked:</span><br><span class="line">		// Initialize trash position</span><br><span class="line">		Trash.goTo(x:RANDOM(-240 TO 240),y:180)</span><br><span class="line">		Forever:</span><br><span class="line">			IF mouseDown and Trash.touching(mousePointer) THEN</span><br><span class="line">				Trash.goto(mousePointer postion)</span><br><span class="line">	// Scoreing System</span><br><span class="line">	WHEN green flag clicked:</span><br><span class="line">		FOEVER:</span><br><span class="line">			IF trash.touching(Oscar) Then</span><br><span class="line">				score INCREMENT BY 1</span><br><span class="line">				trash.goto(x:random(-240 to 240),y:180) //reset trash position</span><br><span class="line">		</span><br></pre></td></tr></table></figure>
+
+<p>核心机制:</p>
+<ol>
+<li><strong>奥斯卡角色互动</strong> - 鼠标悬停时改变造型</li>
+<li><strong>垃圾掉落机制</strong> - 从顶部随机位置下落</li>
+<li><strong>拖拽功能</strong> - 可以用鼠标拖动垃圾</li>
+<li><strong>得分系统</strong> - 将垃圾拖到奥斯卡身上得分</li>
+</ol>
+<h2 id="homework"><a href="#homework" class="headerlink" title="homework"></a>homework</h2><p>Starting from scratch 要求做一个Scratch Project。我希望制作一个周计划scratch。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/17/blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/17/blog/" class="post-title-link" itemprop="url">blog</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-17 17:51:20 / 修改时间：17:52:04" itemprop="dateCreated datePublished" datetime="2025-11-17T17:51:20+08:00">2025-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这是一个空白页，打算用来写blog优化相关。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/17/OpenManus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/17/OpenManus/" class="post-title-link" itemprop="url">OpenManus</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-17 17:31:29" itemprop="dateCreated datePublished" datetime="2025-11-17T17:31:29+08:00">2025-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-18 18:30:32" itemprop="dateModified" datetime="2025-11-18T18:30:32+08:00">2025-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/OpenManus/" itemprop="url" rel="index"><span itemprop="name">OpenManus</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="openmanus"><a href="#openmanus" class="headerlink" title="openmanus"></a>openmanus</h1><h2 id="0-项目概述"><a href="#0-项目概述" class="headerlink" title="0 项目概述"></a>0 项目概述</h2><ul>
+<li>项目名称和简介：OpenManus 是一个开源的智能体项目，旨在提供类似于 Manus 的功能，但无需邀请码即可使用。它是一个通用型 AI 助手，能够执行各种任务，包括编程、信息检索、文件处理和网页浏览等。</li>
+<li>项目目标和功能：提供一个功能强大的 AI 助手，能够通过各种工具与计算机和网络交互，解决用户的各种请求。主要功能包括 Python 代码执行、网页浏览、文件保存、谷歌搜索等。</li>
+<li>技术栈概述：<br>编程语言：Python 3.12<ul>
+<li>核心依赖：OpenAI API ( 支持 GPT-4o 等模型 )</li>
+<li>关键库：browser_use（浏览器操作）、Pydantic（数据验证）、tenacity（重试机制）</li>
+<li>架构模式：代理（Agent）模式、工具（Tool）模式</li>
+</ul>
+</li>
+<li>主线说明：本文档将围绕 “ 从用户输入到智能体完成任务的完整流程 “ 这一主线，简要解析manus 的架构设计和关键代码实现。详细解析将在其他文档单开界面中展示。</li>
+</ul>
+<p><strong>项目代号</strong> om</p>
+<h2 id="1-目录结构"><a href="#1-目录结构" class="headerlink" title="1 目录结构"></a>1 目录结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">OpenManus/</span><br><span class="line">|- app/ 				# 主要应用代码</span><br><span class="line">|	|- agent/ 			# 代理类实现</span><br><span class="line">|	|- prompt/ 			# 系统提示和指令</span><br><span class="line">|	|- tool/			# 工具类实现</span><br><span class="line">|	|- llm.py			# 语言模型交互</span><br><span class="line">|	|- logger.py		# 日志系统</span><br><span class="line">|	|- schema.py		# 数据结构定义</span><br><span class="line">|- assets/				# 静态资源</span><br><span class="line">|- config/				# 配置文件</span><br><span class="line">|- main.py				# 主入口</span><br><span class="line">|- run_flow.py			# 多智能体模式</span><br><span class="line">|- requirements.txt		# 依赖列表</span><br><span class="line">|- setup.py				# 安装脚本</span><br><span class="line">|- examples/			# 测试案例</span><br><span class="line">|- tests/				# 测试文件</span><br><span class="line">|- workspace/			# 工作空间，存放manus生成的文件</span><br></pre></td></tr></table></figure>
+
+<p>核心文件:</p>
+<ul>
+<li><p>main.py 主入口点，实现了命令行交互逻辑</p>
+</li>
+<li><p>app&#x2F;agent&#x2F;toolcall.py：Manus代理的实现，定义了代理能力和使用的工具</p>
+</li>
+<li><p>app&#x2F;agent&#x2F;react: ReAct模式代理的基础实现</p>
+</li>
+<li><p>app&#x2F;llm.py: 与语言模型交互的封装类</p>
+</li>
+<li><p>app&#x2F;tool&#x2F;*.py： 各种工具的实现(浏览器、执行python、保存文件等)</p>
+</li>
+</ul>
+<p>在2025.11的openmanus中还提供了一些扩展</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># mcp</span><br><span class="line">run_mcp.py</span><br><span class="line">run_mcp_server.py</span><br><span class="line"># sandbox</span><br><span class="line">sandbox_main.py</span><br><span class="line">app/sanbox/</span><br><span class="line"># protocol</span><br><span class="line">protocol/</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-架构设计"><a href="#2-架构设计" class="headerlink" title="2 架构设计"></a>2 架构设计</h2><ul>
+<li><p><strong>入口层</strong>：包括<code>main.py</code>、<code>run_flow.py</code>、<code>run_mcp.py</code>、<code>protocol/a2a/app/main.py</code>等，负责解析用户输入、加载配置、初始化流程&#x2F;智能体。</p>
+</li>
+<li><p><strong>流程层（Flow）</strong>：如<code>PlanningFlow</code>，负责任务分解、步骤规划、智能体分配、流程控制。</p>
+</li>
+<li><p><strong>智能体层（Agent）</strong>：如<code>Manus</code>、<code>DataAnalysis</code>、<code>MCPAgent</code>等，负责具体任务的执行、工具调用、状态管理。</p>
+</li>
+<li><p><strong>工具层（Tool）</strong>：如<code>PythonExecute</code>、<code>BrowserUseTool</code>、<code>StrReplaceEditor</code>等，负责具体操作的实现。</p>
+</li>
+<li><p><strong>协议层</strong>：如MCP、A2A协议，负责与外部工具服务器、智能体生态对接。</p>
+</li>
+<li><p><strong>安全层</strong>：如沙箱、权限控制、资源隔离，保障系统安全。</p>
+</li>
+<li><p><strong>配置层</strong>：如<code>config.toml</code>、多语言文档，支持灵活配置与国际化。</p>
+</li>
+<li><p><strong>生态层</strong>：如社区贡献、插件机制、第三方集成，支持系统持续演进。</p>
+</li>
+</ul>
+<p><strong>系统架构图</strong></p>
+<pre>
+<code class="mermaid">
+
+sequenceDiagram
+    participant U as 用户
+    participant F as Flow调度器
+    participant M as Manus
+    participant D as DataAnalysis
+    participant MC as MCPAgent
+    participant T as 工具层
+
+    U-&gt;&gt;F: 复杂任务请求
+    Note over F: Planning Flow模式
+    
+    F-&gt;&gt;F: 任务分解与规划
+    F-&gt;&gt;M: 分配协调任务
+    F-&gt;&gt;MC: 分配数据获取任务
+    
+    MC-&gt;&gt;T: 调用远程工具获取数据
+    T--&gt;&gt;MC: 返回原始数据
+    MC--&gt;&gt;F: 提交数据结果
+    
+    F-&gt;&gt;D: 分配数据分析任务
+    D-&gt;&gt;T: 调用数据分析工具
+    T--&gt;&gt;D: 返回分析结果
+    D--&gt;&gt;F: 提交分析报告
+    
+    F-&gt;&gt;M: 分配报告生成任务
+    M-&gt;&gt;M: 整合多方结果
+    M--&gt;&gt;F: 生成最终报告
+    
+    F--&gt;&gt;U: 交付完整解决方案
+</code>
+</pre>
+
+<p><strong>流程调度层 (Flow Layer)</strong></p>
+<ul>
+<li>Planning Flow: 先规划后执行，适合复杂项目</li>
+<li><strong>Sequential Flow</strong>: 顺序执行，适合线性任务</li>
+</ul>
+<p><strong>智能体协作层 (Agent Layer)</strong></p>
+<ul>
+<li>Manus: 总指挥，负责任务协调和决策</li>
+<li>DataAnalysis: 专业数据分析师</li>
+<li>MCPAgent: 工具集成专家</li>
+</ul>
+<p><strong>工具执行层 (Tool Layer)</strong></p>
+<ul>
+<li>本地工具: Python执行、文件操作等</li>
+<li>数据分析工具: 统计、可视化、数据处理</li>
+<li>远程MCP工具: 通过协议调用的外部服务</li>
+</ul>
+<h3 id="2-1-代理层次结构"><a href="#2-1-代理层次结构" class="headerlink" title="2.1 代理层次结构"></a>2.1 代理层次结构</h3><p>OpenManus采用了层次化的代理结构，通过继承关系实现功能的逐级扩展:</p>
+<ul>
+<li><p>BaseAgent :所有代理的基类，定义基本状态和执行流程</p>
+</li>
+<li><p>ReActAgent:实现思考-行动循环的代理基类</p>
+</li>
+<li><p>ToolCallAgent:能够调用工具的代理实现</p>
+</li>
+<li><p>Manus:通用总指挥Manus代理，集成所有能力</p>
+<p><img src="/2025/11/17/OpenManus/mermaid-20251118%20112111.png"></p>
+</li>
+<li><p>DataAnalysis:专为数据分析和可视化设计，可与manus写作，完成”数据生成-分析-可视化”</p>
+</li>
+<li><p>MCPAgent:通过MCP协议动态获取和调用远程工具，自动同步工具schema，支持工具热插拔。</p>
+</li>
+</ul>
+<h3 id="2-2-工具系统设计"><a href="#2-2-工具系统设计" class="headerlink" title="2.2 工具系统设计"></a>2.2 工具系统设计</h3><ul>
+<li>BaseTool:所有工具的基类，定义执行接口</li>
+<li>ToolCollection:工具管理类，负责工具注册和调用</li>
+<li>具体工具<ul>
+<li><code>BrowserUseTool</code>：浏览器交互工具</li>
+<li><code>PythonExecute</code>：Python 代码执行工具</li>
+<li><code>GoogleSearch</code>：谷歌搜索工具</li>
+<li><code>FileSaver</code>：文件保存工具</li>
+<li><code>Terminate</code>：终止执行的工具</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2025/11/17/OpenManus/mermaid-20251118%20132607-1763443629695.png" alt="mermaid-20251118 132607"></p>
+<h3 id="2-3-语言模型接口"><a href="#2-3-语言模型接口" class="headerlink" title="2.3 语言模型接口"></a>2.3 语言模型接口</h3><p>LLM类是系统与OpenAI API交互的核心组件.</p>
+<h2 id="3-单智能体"><a href="#3-单智能体" class="headerlink" title="3 单智能体"></a>3 单智能体</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户输入-&gt; Message对象 -&gt; 代理内存(Memory) -&gt; LLM处理(ask_tool) -&gt; 工具调用(ToolCall) -&gt;工具执行(execute_tool) -&gt; 结果(ToolResult) -&gt; 新Message对象 -&gt; 代理内存 -&gt; 循环继续</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2025/11/17/OpenManus/1763387331485.png"></p>
+<h3 id="3-1-main-py"><a href="#3-1-main-py" class="headerlink" title="3.1 main.py"></a>3.1 main.py</h3><p>实现三个功能</p>
+<ul>
+<li>解析命令行参数或者接收用户输入作为提示</li>
+<li>初始化Manus智能体</li>
+<li>执行智能体处理逻辑</li>
+<li>妥善处理异常和资源清理</li>
+<li>支持异步操作以提高性能</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> app.agent.manus <span class="keyword">import</span> Manus</span><br><span class="line"><span class="keyword">from</span> app.logger <span class="keyword">import</span> logger</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>argparse : python 标准库，用于解析命令行参数</li>
+<li>asyncio: python 异步编程库,用于处理异步任务</li>
+</ul>
+<p><strong>主异步函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># Parse command line arguments </span></span><br><span class="line">    <span class="comment"># 创建命令行参数解析器</span></span><br><span class="line">    <span class="comment"># 后面的description 会在用户使用帮助参数时显示</span></span><br><span class="line">    parser = argparse.ArgumentParser(description=<span class="string">&quot;Run Manus agent with a prompt&quot;</span>)</span><br><span class="line">    <span class="comment"># 添加--prompt参数</span></span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&quot;--prompt&quot;</span>, <span class="built_in">type</span>=<span class="built_in">str</span>, required=<span class="literal">False</span>, <span class="built_in">help</span>=<span class="string">&quot;Input prompt for the agent&quot;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># 解析命令行参数并存储在args变量中</span></span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># Create and initialize Manus agent</span></span><br><span class="line">    agent = <span class="keyword">await</span> Manus.create()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># Use command line prompt if provided, otherwise ask for input</span></span><br><span class="line">        prompt = args.prompt <span class="keyword">if</span> args.prompt <span class="keyword">else</span> <span class="built_in">input</span>(<span class="string">&quot;Enter your prompt: &quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> prompt.strip():</span><br><span class="line">            logger.warning(<span class="string">&quot;Empty prompt provided.&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        logger.warning(<span class="string">&quot;Processing your request...&quot;</span>)</span><br><span class="line">        <span class="keyword">await</span> agent.run(prompt)</span><br><span class="line">        logger.info(<span class="string">&quot;Request processing completed.&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">        logger.warning(<span class="string">&quot;Operation interrupted.&quot;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="comment"># Ensure agent resources are cleaned up before exiting</span></span><br><span class="line">        <span class="keyword">await</span> agent.cleanup()</span><br></pre></td></tr></table></figure>
+
+<p><strong>入口</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ = <span class="string">&quot;main&quot;</span>:</span><br><span class="line">	asyncio.run(main())</span><br></pre></td></tr></table></figure>
+
+<p><strong>sidenote</strong> 异步编程</p>
+<ul>
+<li><p><strong>协程</strong>是一种比线程更轻量级的并发编程技术，可以理解为 <strong>可暂停和恢复的函数</strong>。单线程内实现并发，避免线程切换开销</p>
+</li>
+<li><p><strong>线程</strong>是<strong>进程中的一个执行单元</strong>，是操作系统能够进行运算调度的最小单位。</p>
+<p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">worker</span>(<span class="params">thread_name, delay</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;线程的工作函数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;线程 <span class="subst">&#123;thread_name&#125;</span> 开始工作&quot;</span>)</span><br><span class="line">    time.sleep(delay)  <span class="comment"># 模拟耗时操作</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;线程 <span class="subst">&#123;thread_name&#125;</span> 完成工作&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并启动线程</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;主线程开始&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 创建线程对象</span></span><br><span class="line">    thread1 = threading.Thread(target=worker, args=(<span class="string">&quot;A&quot;</span>, <span class="number">2</span>))</span><br><span class="line">    thread2 = threading.Thread(target=worker, args=(<span class="string">&quot;B&quot;</span>, <span class="number">1</span>))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 启动线程</span></span><br><span class="line">    thread1.start()</span><br><span class="line">    thread2.start()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待线程完成</span></span><br><span class="line">    thread1.join()</span><br><span class="line">    thread2.join()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;主线程结束&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-2-关键组件"><a href="#3-2-关键组件" class="headerlink" title="3.2 关键组件"></a>3.2 关键组件</h3><h4 id="Message"><a href="#Message" class="headerlink" title="Message"></a>Message</h4><p>app&#x2F;schema.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Message类 表示对话中的各类消息</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Message</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    role: <span class="built_in">str</span>  <span class="comment"># &quot;user&quot;, &quot;assistant&quot;, &quot;system&quot;, &quot;tool&quot;</span></span><br><span class="line">    content: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    tool_calls: <span class="type">Optional</span>[<span class="type">List</span>[ToolCall]] = <span class="literal">None</span></span><br><span class="line">    tool_call_id: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line">    name: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">user_message</span>(<span class="params">cls, content: <span class="built_in">str</span></span>) -&gt; <span class="string">&quot;Message&quot;</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;创建用户消息&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> cls(role=<span class="string">&quot;user&quot;</span>, content=content)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">assistant_message</span>(<span class="params">cls, content: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>, tool_calls: <span class="type">Optional</span>[<span class="type">List</span>[ToolCall]] = <span class="literal">None</span></span>) -&gt; <span class="string">&quot;Message&quot;</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;创建助手消息&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> cls(role=<span class="string">&quot;assistant&quot;</span>, content=content, tool_calls=tool_calls)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">system_message</span>(<span class="params">cls, content: <span class="built_in">str</span></span>) -&gt; <span class="string">&quot;Message&quot;</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;创建系统消息&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> cls(role=<span class="string">&quot;system&quot;</span>, content=content)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">tool_message</span>(<span class="params">cls, content: <span class="built_in">str</span>, tool_call_id: <span class="built_in">str</span>, name: <span class="built_in">str</span></span>) -&gt; <span class="string">&quot;Message&quot;</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;创建工具消息&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> cls(role=<span class="string">&quot;tool&quot;</span>, content=content, tool_call_id=tool_call_id, name=name)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="ToolCallAgent"><a href="#ToolCallAgent" class="headerlink" title="ToolCallAgent"></a>ToolCallAgent</h4><p>app&#x2F;agent&#x2F;toolcall.py</p>
+<p>think和act工具函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">think</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">	<span class="comment"># 向LLM发送请求，获取工具调用决策</span></span><br><span class="line">	response = <span class="keyword">await</span> <span class="variable language_">self</span>.llm.ask_tool(</span><br><span class="line">		message = <span class="variable language_">self</span>.messages,</span><br><span class="line">		system_msgs = [Message.system_message(<span class="variable language_">self</span>.system_prompt)],</span><br><span class="line">		tools = <span class="variable language_">self</span>.available_tools.to_params(),</span><br><span class="line">		tool_choice = <span class="variable language_">self</span>.tool_choices,</span><br><span class="line">	)</span><br><span class="line">	<span class="comment"># 记录LLM响应到内存</span></span><br><span class="line">	<span class="keyword">if</span> response.content:</span><br><span class="line">		assistant_msg = Message.assistant_message(</span><br><span class="line">			content = response.content,</span><br><span class="line">			tool_calls = <span class="variable language_">self</span>.tool_calls</span><br><span class="line">		)</span><br><span class="line">		<span class="variable language_">self</span>.memory.add_message(assistant_msg)</span><br><span class="line">		</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">act</span>(<span class="params">self</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">	<span class="comment"># 执行每个工具调用</span></span><br><span class="line">	<span class="keyword">for</span> command <span class="keyword">in</span> <span class="variable language_">self</span>.tool_calls:</span><br><span class="line">		result = <span class="keyword">await</span> <span class="variable language_">self</span>.execute_tool(command)</span><br><span class="line">		<span class="comment"># 记录工具执行结果到内存</span></span><br><span class="line">		tool_msg = Message.tool_message(</span><br><span class="line">			content = result,too_call_id = command.<span class="built_in">id</span>,</span><br><span class="line">			name = command.function.name</span><br><span class="line">		)</span><br><span class="line">		<span class="variable language_">self</span>.memory.add_message(tool_msg)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-流程"><a href="#3-3-流程" class="headerlink" title="3.3 流程"></a>3.3 流程</h3><pre>
+<code class="mermaid">
+
+graph TD
+    A[用户输入请求] --&gt; B[创建Manus代理实例]
+    B --&gt; C[调用agent.run]
+    C --&gt; D[添加请求到内存]
+    D --&gt; E[进入执行循环]
+    E --&gt; F[执行step方法]
+    F --&gt; G[think方法]
+    G --&gt; H[向LLM发送请求]
+    H --&gt; I[记录LLM响应]
+    I --&gt; J{有工具调用?}
+    J --&gt;|是| K[act方法]
+    K --&gt; L[执行工具调用]
+    L --&gt; M[执行具体工具操作]
+    M --&gt; N[记录工具执行结果]
+    N --&gt; O[返回执行结果]
+    O --&gt; P[检查是否完成任务]
+    P --&gt;|完成| Q[结束执行]
+    P --&gt;|未完成| E
+    J --&gt;|否| R[返回思考结果]
+    R --&gt; P
+</code>
+</pre>
+
+<p><strong>示例</strong> : 用户请求”查找Agent最新新闻，并保存到文件”</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户输入</span></span><br><span class="line">prompt = <span class="string">&quot;查找关于人工智能的最新新闻并保存到文件&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">await</span> agent.run(prompt)</span><br><span class="line"></span><br><span class="line"><span class="comment"># BaseAgent.run 添加到内存</span></span><br><span class="line"><span class="variable language_">self</span>.update_memory(<span class="string">&quot;user&quot;</span>,request)</span><br></pre></td></tr></table></figure>
+
+<h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ToolCallAgent.think方法向LLM发送请求</span></span><br><span class="line">response = <span class="keyword">await</span> <span class="variable language_">self</span>.llm.ask_tool(</span><br><span class="line">	messages = <span class="variable language_">self</span>.messages,</span><br><span class="line">	system_msgs = [Message.system_message(<span class="variable language_">self</span>.system_prompt)],</span><br><span class="line">	tools = <span class="variable language_">self</span>.available_tools.to_params()</span><br><span class="line">)</span><br><span class="line"><span class="comment"># LLM决定使用GoogleSearch工具</span></span><br><span class="line"><span class="variable language_">self</span>.tool_calls = ToolCall(</span><br><span class="line">	<span class="built_in">id</span> = <span class="string">&quot;call_123&quot;</span>,</span><br><span class="line">	function = Function(</span><br><span class="line">		name = <span class="string">&quot;google_search&quot;</span>,</span><br><span class="line">		arguments = &#123;<span class="string">&quot;query&quot;</span>:<span class="string">&quot;latest artificial intelligence news&quot;</span>&#125;</span><br><span class="line">		)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+
+<h4 id="行动阶段-搜索"><a href="#行动阶段-搜索" class="headerlink" title="行动阶段-搜索"></a>行动阶段-搜索</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ToolCallAgent .act方法执行工具调用</span></span><br><span class="line">result = <span class="keyword">await</span> <span class="variable language_">self</span>.execute_tool(command) <span class="comment"># 执行goolesearch</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self,query</span>) -&gt; ToolResult:</span><br><span class="line">    search_result = <span class="keyword">await</span> <span class="variable language_">self</span>._perform_search(query)</span><br><span class="line">    <span class="keyword">return</span> ToolResult(output = <span class="string">f&quot;Search result for &#x27;<span class="subst">&#123;query&#125;</span>&#x27;:\n<span class="subst">&#123;search_results&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将结果添加到内存</span></span><br><span class="line">tool_msg = Message.tool_message(</span><br><span class="line">    content=<span class="string">&quot;Search results for &#x27;latest artificial intelligence news&#x27;:\n...&quot;</span>,</span><br><span class="line">    tool_call_id=<span class="string">&quot;call_123&quot;</span>,</span><br><span class="line">    name=<span class="string">&quot;google_search&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="variable language_">self</span>.memory.add_message(tool_msg)</span><br></pre></td></tr></table></figure>
+
+<h4 id="思考阶段-第二轮"><a href="#思考阶段-第二轮" class="headerlink" title="思考阶段(第二轮)"></a>思考阶段(第二轮)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 再次向LLM发送请求，包含搜索结果</span></span><br><span class="line">response = <span class="keyword">await</span> <span class="variable language_">self</span>.llm.ask_tool(</span><br><span class="line">    messages=<span class="variable language_">self</span>.messages,  <span class="comment"># 现在包含搜索结果</span></span><br><span class="line">    system_msgs=[Message.system_message(<span class="variable language_">self</span>.system_prompt)],</span><br><span class="line">    tools=<span class="variable language_">self</span>.available_tools.to_params(),</span><br><span class="line">    tool_choice=<span class="string">&quot;auto&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># LLM决定使用FileSaver工具</span></span><br><span class="line"><span class="variable language_">self</span>.tool_calls = [</span><br><span class="line">    ToolCall(</span><br><span class="line">        <span class="built_in">id</span>=<span class="string">&quot;call_456&quot;</span>,</span><br><span class="line">        function=Function(</span><br><span class="line">            name=<span class="string">&quot;file_saver&quot;</span>,</span><br><span class="line">            arguments=<span class="string">&#x27;&#123;&quot;content&quot;: &quot;最新人工智能新闻摘要：\\n1. OpenAI发布GPT-5...\\n2. Google推出新的AI研究项目...\\n...&quot;, &quot;file_path&quot;: &quot;ai_news.txt&quot;&#125;&#x27;</span></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="行动阶段-保存文件"><a href="#行动阶段-保存文件" class="headerlink" title="行动阶段-保存文件"></a>行动阶段-保存文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行FileSaver工具</span></span><br><span class="line">result = <span class="keyword">await</span> <span class="variable language_">self</span>.execute_tool(command)</span><br><span class="line"></span><br><span class="line"><span class="comment"># FileSaver.execute方法</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, content: <span class="built_in">str</span>, file_path: <span class="built_in">str</span>, mode: <span class="built_in">str</span> = <span class="string">&quot;w&quot;</span></span>) -&gt; ToolResult:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_path, mode, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(content)</span><br><span class="line">    <span class="keyword">return</span> ToolResult(output=<span class="string">f&quot;Content successfully saved to <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将结果添加到内存</span></span><br><span class="line">tool_msg = Message.tool_message(</span><br><span class="line">    content=<span class="string">&quot;Content successfully saved to ai_news.txt&quot;</span>,</span><br><span class="line">    tool_call_id=<span class="string">&quot;call_456&quot;</span>,</span><br><span class="line">    name=<span class="string">&quot;file_saver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="variable language_">self</span>.memory.add_message(tool_msg)</span><br></pre></td></tr></table></figure>
+
+<h4 id="思考阶段-第三轮"><a href="#思考阶段-第三轮" class="headerlink" title="思考阶段(第三轮)"></a>思考阶段(第三轮)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 再次向LLM发送请求，包含文件保存结果</span></span><br><span class="line">response = <span class="keyword">await</span> <span class="variable language_">self</span>.llm.ask_tool(</span><br><span class="line">    messages=<span class="variable language_">self</span>.messages,</span><br><span class="line">    system_msgs=[Message.system_message(<span class="variable language_">self</span>.system_prompt)],</span><br><span class="line">    tools=<span class="variable language_">self</span>.available_tools.to_params(),</span><br><span class="line">    tool_choice=<span class="string">&quot;auto&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># LLM决定任务已完成，不需要更多工具调用</span></span><br><span class="line"><span class="variable language_">self</span>.tool_calls = []  <span class="comment"># 空列表表示不需要更多工具调用</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="完成任务"><a href="#完成任务" class="headerlink" title="完成任务"></a>完成任务</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 由于没有工具调用，ToolCallAgent.think返回False</span></span><br><span class="line">should_act = <span class="keyword">await</span> <span class="variable language_">self</span>.think()  <span class="comment"># 返回False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在ReActAgent.step中处理</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> should_act:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Thinking complete - no action needed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在BaseAgent.run中检查状态</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable language_">self</span>.state == AgentState.FINISHED:</span><br><span class="line">    <span class="keyword">break</span>  <span class="comment"># 退出主循环</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-多智能体"><a href="#4-多智能体" class="headerlink" title="4 多智能体"></a>4 多智能体</h2><h3 id="4-1-run-flow-py"><a href="#4-1-run-flow-py" class="headerlink" title="4.1 run_flow.py"></a>4.1 run_flow.py</h3><p><strong>导入模块</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import asyncio</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">from app.agent.data_analysis import DataAnalysis</span><br><span class="line">from app.agent.manus import Manus</span><br><span class="line">from app.config import config</span><br><span class="line">from app.flow.flow_factory import FlowFactory,FlowType</span><br><span class="line">from app.logger import logger</span><br></pre></td></tr></table></figure>
+
+<p><strong>主函数</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">async def run_flow():</span><br><span class="line">    agents = &#123;</span><br><span class="line">        &quot;manus&quot;: Manus(),</span><br><span class="line">    &#125;</span><br><span class="line">    if config.run_flow_config.use_data_analysis_agent:</span><br><span class="line">        agents[&quot;data_analysis&quot;] = DataAnalysis()</span><br><span class="line">    try:</span><br><span class="line">        prompt = input(&quot;Enter your prompt: &quot;)</span><br><span class="line"></span><br><span class="line">        if prompt.strip().isspace() or not prompt:</span><br><span class="line">            logger.warning(&quot;Empty prompt provided.&quot;)</span><br><span class="line">            return</span><br><span class="line"></span><br><span class="line">        flow = FlowFactory.create_flow(</span><br><span class="line">            flow_type=FlowType.PLANNING,</span><br><span class="line">            agents=agents,</span><br><span class="line">        )</span><br><span class="line">        logger.warning(&quot;Processing your request...&quot;)</span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line">            start_time = time.time()</span><br><span class="line">            result = await asyncio.wait_for(</span><br><span class="line">                flow.execute(prompt),</span><br><span class="line">                timeout=3600,  # 60 minute timeout for the entire execution</span><br><span class="line">            )</span><br><span class="line">            elapsed_time = time.time() - start_time</span><br><span class="line">            logger.info(f&quot;Request processed in &#123;elapsed_time:.2f&#125; seconds&quot;)</span><br><span class="line">            logger.info(result)</span><br><span class="line">        except asyncio.TimeoutError:</span><br><span class="line">            logger.error(&quot;Request processing timed out after 1 hour&quot;)</span><br><span class="line">            logger.info(</span><br><span class="line">                &quot;Operation terminated due to timeout. Please try a simpler request.&quot;</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    except KeyboardInterrupt:</span><br><span class="line">        logger.info(&quot;Operation cancelled by user.&quot;)</span><br><span class="line">    except Exception as e:</span><br><span class="line">        logger.error(f&quot;Error: &#123;str(e)&#125;&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-工作流"><a href="#4-2-工作流" class="headerlink" title="4.2 工作流"></a>4.2 工作流</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">初始化 → 配置检查 → 用户输入 → 流程创建 → 任务执行 → 结果返回 → 资源清理</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
