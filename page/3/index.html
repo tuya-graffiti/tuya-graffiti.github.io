@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,6 +166,113 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/17/MARL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/17/MARL/" class="post-title-link" itemprop="url">MARL-1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-17 21:01:45" itemprop="dateCreated datePublished" datetime="2025-11-17T21:01:45+08:00">2025-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-18 22:04:53" itemprop="dateModified" datetime="2025-11-18T22:04:53+08:00">2025-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/MARL/" itemprop="url" rel="index"><span itemprop="name">MARL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="ch1-引言"><a href="#ch1-引言" class="headerlink" title="ch1 引言"></a>ch1 引言</h2><p>多智能体强化学习(Multi-Agent Re-inforcement Learning,MARL)旨在实现。多智能体强化学习以强化学习为基础。在此过程中，智能体通过尝试动作并接受奖励来学习最优决策策略，其目标是选择动作以最大化时间累计获得的奖励综合。</p>
+<h3 id="1-1-多智能体系统"><a href="#1-1-多智能体系统" class="headerlink" title="1.1 多智能体系统"></a>1.1 多智能体系统</h3><p> <img src="/2025/11/17/MARL/1763389949244.png"></p>
+<p><strong>环境</strong></p>
+<p>环境是一个物理的或虚拟的世界，其状态随着时间的推移而变化，并受到环境中存在的智能体的动作的影响。环境规定了智能体在任何时间点可以采取的动作，以及各个智能体对环境状态的观测结果。环境的状态空间可以是离散的也可以是连续的，或者是二者的组合。</p>
+<p>同样，动作空间也可以是离散或连续的，例如，在迷宫中向上&#x2F;下&#x2F;左&#x2F;右移动，或以指定的连续角度转动。多智能体环境通常的特点是，智能体对环境的观测是有限的、不完全的。这意味着单个智能体可能只能观测到环境状态的部分信息，而且不同的智能体可能会接收到不同的环境观测结果。</p>
+<p><strong>智能体</strong></p>
+<p>智能体是一个接收环境状态信息的实体，可以选择不同的动作来影响环境状态。在MARL中，这些目标是由奖励函数确定的，奖励函数指定了智能体在特定状态下采取特定动作后获得的标量奖励信号。“策略”一词指的是智能体根据当前环境状态选择动作（或为选择每个动作分配概率）的函数。如果环境对于智能体是部分可观的，那么策略可能基于智能体当前和过去的观测结果。</p>
+<p><img src="/2025/11/17/MARL/1763390159331.png"></p>
+<p><strong>基于等级的搜寻任务</strong></p>
+<p>如上图所示，一个基于等级的搜寻任务，其中由三个机器人组成的小组必须收集所有物品（如图中的苹果），每个机器人由一个智能体控制。每个机器人和物品都有一个相关的技能等级显示在右下角，如图所示。一个或多个机器人组成的小组只要位于物品旁边，且机器人的等级总和大于或等于物品的等级，就可以收集物品。</p>
+<p>在给定时间内，该环境的状态完全由包含机器人和物品位置的变量（用x和y来表示）以及表示物品是否存在的二进制变量来描述。机器人”一词是通过位置变量x和y明确表示的对象的标签。同样，“物品”一词指的是基于等级搜寻的对象，它由位置变量x和y以及一个二进制存在变量表示。与这些物体标签不同，“智能体”一词指的是一个抽象的决策实体，它观测环境中的某些信息，并为特定的动作变量选择值。在本例中，智能体选择的是机器人的动作。</p>
+<p>如果智能体和某些对象之间存在直接的一一对应关系，例如，基于等级的搜寻示例中的智能体和机器人，那么可以方便地交替使用这两个术语。例如，在基于等级的搜寻示例中，当提到由智能体i控制的机器人的技能等级时，我们可以说“智能体i的技能等级”。除非有必要进行区分，否则在本书中，我们一般将“智能体”一词与它所控制的对象等同。</p>
+<p>多智能体系统的决定性特征是，各智能体必须协调（或对抗）彼此的动作，以实现各自的目标。在竞争场景中，智能体的目标可能截然相反，因此智能体之间是间接竞争关系。这种竞争场景的一个例子是让两个智能体下棋，赢棋的一方获得的奖励为+1，输棋的一方获得的奖励为-1（或者平局双方奖励都为0）。在这两种极端情况之间，智能体的目标可能在某些方面一致，而在其他方面存在差异。这就可能导致既涉及合作，也涉及不同程度的竞争的复杂多智能体交互问题。</p>
+<p><strong>博弈模型</strong></p>
+<p>在竞争场景中，智能体的目标可能截然相反，因此智能体之间是间接竞争关系。这种竞争场景的一个例子是让两个智能体下棋，赢棋的一方获得的奖励为+1，输棋的一方获得的奖励为-1（或者平局双方奖励都为0）。在这两种极端情况之间，智能体的目标可能在某些方面一致，而在其他方面存在差异。这就可能导致既涉及合作，也涉及不同程度的竞争的复杂多智能体交互问题。在竞争场景中，智能体的目标可能截然相反，因此智能体之间是间接竞争关系。这种竞争场景的一个例子是让两个智能体下棋，赢棋的一方获得的奖励为+1，输棋的一方获得的奖励为-1（或者平局双方奖励都为0）。在这两种极端情况之间，智能体的目标可能在某些方面一致，而在其他方面存在差异。这就可能导致既涉及合作，也涉及不同程度的竞争的复杂多智能体交互问题。大多数的解都以某种均衡概念为基础，这意味着没有任何一个智能体可以偏离解中的策略来改善其结果。</p>
+<p><strong>技术问题</strong></p>
+<p>这些问题包括：如何设计算法使智能体能够选择最优动作，以实现其特定目标；如何设计环境激励智能体的某些长期行为；如何在智能体之间进行沟通和传播；如何在智能体群体中形成规范、惯例和不同的角色。</p>
+<p>本书关注的是这些问题中的第一个，如何设计算法使智能体能够选择最优动作，以实现其特定目标。</p>
+<h3 id="1-2-多智能体强化学习"><a href="#1-2-多智能体强化学习" class="headerlink" title="1.2 多智能体强化学习"></a>1.2 多智能体强化学习</h3><p>多智能体强化学习算法为多智能体系统中的一组智能体学习最优策略。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
