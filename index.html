@@ -205,7 +205,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-11-23 18:05:38 / 修改时间：19:10:35" itemprop="dateCreated datePublished" datetime="2025-11-23T18:05:38+08:00">2025-11-23</time>
+      <time title="创建时间：2025-11-23 18:05:38 / 修改时间：19:16:11" itemprop="dateCreated datePublished" datetime="2025-11-23T18:05:38+08:00">2025-11-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,7 +231,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="1-1-光纤通信的发展"><a href="#1-1-光纤通信的发展" class="headerlink" title="1.1 光纤通信的发展"></a>1.1 光纤通信的发展</h1><p>&#x2F;</p>
+          <h1 id="1-1-光纤通信的发展"><a href="#1-1-光纤通信的发展" class="headerlink" title="1.1 光纤通信的发展"></a>1.1 光纤通信的发展</h1><pre>
+<code class="mermaid">
+
+timeline
+    title 光纤通信技术发展历程
+    20世纪70年代 : 解决了光纤的低损耗&lt;br&gt;带来可用光器件&lt;br&gt;小容量光纤通信系统的商用化
+    20世纪80年代 : 准同步数字系列(PDH)
+    20世纪90年代 : 同步数字系列(SDH)
+    21世纪 : 光波分复用(WDM)&lt;br&gt;光传送网(OTN)&lt;br&gt;自动交换光网络(ASON)
+</code>
+</pre>
 <h1 id="1-2-WDM技术的优点"><a href="#1-2-WDM技术的优点" class="headerlink" title="1.2 WDM技术的优点"></a>1.2 WDM技术的优点</h1><h2 id="1-2-1-WDM原理"><a href="#1-2-1-WDM原理" class="headerlink" title="1.2.1  WDM原理"></a>1.2.1  WDM原理</h2><p>单模光纤并不仅仅是在1.31μm和1.55μm两个独立波长上是低损耗的,而是存在两个低损耗窗口,其总宽度约200nm,所提供的带宽达27THz。因此人们设想:如果在这两个窗口上以适当的波长间隔△λ选取多个波长做载波,然后通过一个器件把它们合在一起传输,到达接收端后,再通过另一个器件将它们分离开来,这样,就可以在不提高单信道速率的情况下,使光纤中的传输容量成倍增加,从而降低每一通路的成本,避免电子瓶颈的限制。这就是光波分复用技术。<br><img src="/2025/11/23/CM2/1d1.png"><br>图1-1 普通单模光纤的衰减随波长变化示意图<br>所谓WDM(Wavelength Division Multiplexing)就是为充分利用单模光纤低损耗区的巨大带宽资源,采用光波分复用器(合波器),在发送端将多个不同波长的光载波合并起来并送入一根光纤进行传输,在接收端,再由光解复用器(分波器)将这些不同波长承载不同信号的光载波分开的复用方式。<br><a href="1d2.png"></a><br>图1-2 WDM系统原理方框图<br>从图1-2中可以看出,在发送端由光发送机TX.分别发出标称波长为λ的光信号,每个光通道可分别承载不同类型或速率的信号,如2.5Gbit&#x2F;s或10Gbit&#x2F;s的SDH信号或其他业务信号,然后由光波分复用器把这些复用光信号合并为一束光波输入到光纤中进行传输;在接收端用光解复用器把不同光信号分解开,分别输入到相应的光接收机RX中.<br><strong>WDM系统</strong><br>关键组成&#x3D; 合&#x2F;分波器 + 光放大器 + 光源</p>
 <ul>
 <li>合&#x2F;分波器</li>
