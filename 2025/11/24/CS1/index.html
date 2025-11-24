@@ -27,7 +27,7 @@
 <meta property="og:description" content="数位DP数位是指把一个数字按照个、十、百、千等等一位一位地拆开，关注它每一位上的数字。如果拆的是十进制数，那么每一位数字都是 0~9，其他进制可类比十进制。 数位 DP：用来解决一类特定问题，这种问题比较好辨认，一般具有这几个特征：  要求统计满足一定条件的数的数量（即，最终目的为计数）； 这些条件经过转化后可以使用「数位」的思想去理解和判断； 输入会提供一个数字区间（有时也只提供上界）来作为统计">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-24T10:32:09.000Z">
-<meta property="article:modified_time" content="2025-11-24T16:27:50.181Z">
+<meta property="article:modified_time" content="2025-11-24T16:31:21.966Z">
 <meta property="article:author" content="Yeah">
 <meta name="twitter:card" content="summary">
 
@@ -217,7 +217,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-25 00:27:50" itemprop="dateModified" datetime="2025-11-25T00:27:50+08:00">2025-11-25</time>
+      <time title="修改时间：2025-11-25 00:31:21" itemprop="dateModified" datetime="2025-11-25T00:31:21+08:00">2025-11-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,41 +272,28 @@
 
 flowchart TD
     A[开始数位DP计算] --&gt; B[第0步: 数据预处理]
-  
     B --&gt; C[&quot;high &#x3D; strfinish&lt;br&gt;low &#x3D; strstart&lt;br&gt;n &#x3D; lenhigh&lt;br&gt;low补齐前导零&quot;]
-  
     C --&gt; D[第一步: DP状态定义]
-  
     D --&gt; E[&quot;定义状态: dfsi, limit_high, limit_low&lt;br&gt;i: 当前处理位数0-n&lt;br&gt;limit_high: 是否受上界限制&lt;br&gt;limit_low: 是否受下界限制&quot;]
-  
     E --&gt; F[第二步: 递推公式]
     F --&gt; G{是否处理完所有位数 i等于n}
-  
     G --&gt;|是| H[&quot;返回1&lt;br&gt;成功构造一个有效数字&quot;]
     G --&gt;|否| I[计算当前位数字范围]
-  
     I --&gt; J[&quot;lo &#x3D; limit_low ? intlowi : 0&lt;br&gt;hi &#x3D; limit_high ? inthighi : 9&quot;]
     J --&gt; K[初始化结果res&#x3D;0]
     K --&gt; L[循环枚举数字d从lo到hi]
-  
     L --&gt; M[&quot;更新限制条件:&lt;br&gt;new_limit_high &#x3D; limit_high and d&#x3D;&#x3D;hi&lt;br&gt;new_limit_low &#x3D; limit_low and d&#x3D;&#x3D;lo&quot;]
     M --&gt; N[&quot;递归调用: dfsi+1, new_limit_high, new_limit_low&quot;]
     N --&gt; O[累加结果到res]
-  
     O --&gt; P{是否循环结束}
     P --&gt;|否| L
     P --&gt;|是| Q[返回res]
-  
     H --&gt; R[第三步: 初始化]
     Q --&gt; R
-  
     R --&gt; S[&quot;基准情况: i&#x3D;&#x3D;n时返回1&lt;br&gt;表示找到一个完整数字&quot;]
-  
     S --&gt; T[第四步: 遍历顺序]
     T --&gt; U[&quot;主顺序: 高位→低位 i:0→n&lt;br&gt;次顺序: 数字小→大 d:lo→hi&lt;br&gt;依赖: 当前状态→下一状态&quot;]
-  
     U --&gt; V[算法结束 返回结果]
-  
     %% 样式定义
     classDef step0 fill:#ffebee,stroke:#c62828,stroke-width:3px;
     classDef step1 fill:#e1f5fe,stroke:#01579b,stroke-width:3px;
@@ -314,7 +301,6 @@ flowchart TD
     classDef step3 fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px;
     classDef step4 fill:#fff3e0,stroke:#e65100,stroke-width:3px;
     classDef startend fill:#1e88e5,stroke:#0d47a1,stroke-width:3px,color:white;
-  
     class A,V startend;
     class B,C step0;
     class D,E step1;
