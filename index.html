@@ -149,7 +149,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -166,6 +166,275 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/24/CS2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/24/CS2/" class="post-title-link" itemprop="url">动态规划</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-24 19:00:46 / 修改时间：19:14:12" itemprop="dateCreated datePublished" datetime="2025-11-24T19:00:46+08:00">2025-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="def"><a href="#def" class="headerlink" title="def"></a>def</h1><p>Dynamic Programming ,简称DP。如果某一问题有很多重叠子问题，使用动态规划是最有效的。</p>
+<p>所以动态规划中每一个状态一定是由上一个状态推导出来的，<strong>这一点就区分于贪心</strong>，贪心没有状态推导，而是从局部直接选最优的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如：有N件物品和一个最多能背重量为W 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大。</span><br><span class="line"></span><br><span class="line">动态规划中dp[j]是由dp[j-weight[i]]推导出来的，然后取max(dp[j], dp[j - weight[i]] + value[i])。</span><br><span class="line">但如果是贪心呢，每次拿物品选一个最大的或者最小的就完事了，和上一个状态没有关系。</span><br><span class="line"></span><br><span class="line">所以贪心解决不了动态规划的问题。</span><br></pre></td></tr></table></figure>
+
+<h1 id="DP-解题步骤"><a href="#DP-解题步骤" class="headerlink" title="DP 解题步骤"></a>DP 解题步骤</h1><h2 id="五步曲"><a href="#五步曲" class="headerlink" title="五步曲:"></a>五步曲:</h2><ol>
+<li>确定dp数组（dp table）以及下标的含义</li>
+<li>确定递推公式</li>
+<li>dp数组如何初始化</li>
+<li>确定遍历顺序</li>
+<li>举例推导dp数组</li>
+</ol>
+<h1 id="DP刷题大纲"><a href="#DP刷题大纲" class="headerlink" title="DP刷题大纲"></a>DP刷题大纲</h1><h2 id="代码随想录"><a href="#代码随想录" class="headerlink" title="代码随想录"></a>代码随想录</h2><pre><code class="highlight mermaid">graph LR
+%% 动态规划leetcode刷题大纲
+A[动态规划] --&gt; B[基础题目] &amp; C[背包问题] &amp; D[打家劫舍] &amp; E[股票问题] &amp; F[子序列问题]
+
+%% 背包问题
+C --&gt; C1[01背包] &amp; C2[完全背包] &amp; C3[多重背包]
+
+%% 子序列问题
+F --&gt; F1[子序列 不连续] &amp; F2[子序列 连续 ] &amp; F3[编辑距离] &amp; F4[回文]</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/24/CS1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/11/24/CS1/" class="post-title-link" itemprop="url">数位DP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-24 18:32:09 / 修改时间：22:12:37" itemprop="dateCreated datePublished" datetime="2025-11-24T18:32:09+08:00">2025-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%8C%E6%95%B0%E4%BD%8DDP/" itemprop="url" rel="index"><span itemprop="name">动态规划，数位DP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h1><p>数位是指把一个数字按照个、十、百、千等等一位一位地拆开，关注它每一位上的数字。如果拆的是十进制数，那么每一位数字都是 0~9，其他进制可类比十进制。</p>
+<p>数位 DP：用来解决一类特定问题，这种问题比较好辨认，一般具有这几个特征：</p>
+<ol>
+<li>要求统计满足一定条件的数的数量（即，最终目的为计数）；</li>
+<li>这些条件经过转化后可以使用「数位」的思想去理解和判断；</li>
+<li>输入会提供一个数字区间（有时也只提供上界）来作为统计的限制；</li>
+<li>上界很大（比如 1018<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" title="10^{18}">），暴力枚举验证会超时。</li>
+</ol>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>考虑人类计数的方式，最朴素的计数就是从小到大开始依次加一。但我们发现对于位数比较多的数，这样的过程中有许多重复的部分。例如，从 7000 数到 7999、从 8000 数到 8999、和从 9000 数到 9999 的过程非常相似，它们都是后三位从 000 变到 999，不一样的地方只有千位这一位，所以我们可以把这些过程归并起来，将这些过程中产生的计数答案也都存在一个通用的数组里。此数组根据题目具体要求设置状态，用递推或 DP 的方式进行状态转移。</p>
+<p>数位 DP 中通常会利用常规计数问题技巧，比如把一个区间内的答案拆成两部分相减（即 ans[𝑙,𝑟] &#x3D;ans[0,𝑟] −ans[0,𝑙−1]<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" title="\mathit{ans}_{[l, r]} &#x3D; \mathit{ans}_{[0, r]}-\mathit{ans}_{[0, l - 1]}">）</p>
+<p>那么有了通用答案数组，接下来就是统计答案。统计答案可以选择记忆化搜索，也可以选择循环迭代递推。为了不重不漏地统计所有不超过上限的答案，要从高到低枚举每一位，再考虑每一位都可以填哪些数字，最后利用通用答案数组统计答案。</p>
+<h1 id="通用模板"><a href="#通用模板" class="headerlink" title="通用模板"></a>通用模板</h1><p>leetcode 2999.统计强大整数的数目</p>
+<p><strong>困难</strong></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你三个整数 <code>start</code> ，<code>finish</code> 和 <code>limit</code> 。同时给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，表示一个 <strong>正</strong> 整数。</p>
+<p>如果一个 <strong>正</strong> 整数 <code>x</code> 末尾部分是 <code>s</code> （换句话说，<code>s</code> 是 <code>x</code> 的 <strong>后缀</strong>），且 <code>x</code> 中的每个数位至多是 <code>limit</code> ，那么我们称 <code>x</code> 是 <strong>强大的</strong> 。</p>
+<p>请你返回区间 <code>[start..finish]</code> 内强大整数的 <strong>总数目</strong> 。</p>
+<p>如果一个字符串 <code>x</code> 是 <code>y</code> 中某个下标开始（<strong>包括</strong><code>0</code> ），到下标为 <code>y.length - 1</code> 结束的子字符串，那么我们称 <code>x</code> 是 <code>y</code> 的一个后缀。比方说，<code>25</code> 是 <code>5125</code> 的一个后缀，但不是 <code>512</code> 的后缀。</p>
+<h2 id="模板解"><a href="#模板解" class="headerlink" title="模板解"></a>模板解</h2><h3 id="V1-不考虑前导零"><a href="#V1-不考虑前导零" class="headerlink" title="V1 不考虑前导零"></a>V1 不考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">数位DP 通用模板V1 不考虑前导零</span></span><br><span class="line"><span class="string">@cache 记忆化搜索缓存器 python内置装饰器</span></span><br><span class="line"><span class="string">1.前面的每个数字，是否都等于上界的每个数字。不等于则下一位0-9任选，等于下一位则0-上界</span></span><br><span class="line"><span class="string">2.同理推，当需要下界时的处理方案</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numberOfPowerfulInt</span>(<span class="params">self,start: <span class="built_in">int</span>, finish: <span class="built_in">int</span></span>):</span><br><span class="line">        high = <span class="built_in">str</span>(finish)</span><br><span class="line">        low = <span class="built_in">str</span>(start)</span><br><span class="line">        n = <span class="built_in">len</span>(high)</span><br><span class="line">        low = <span class="string">&#x27;0&#x27;</span> *(n-<span class="built_in">len</span>(low))+low <span class="comment"># 下界补齐前导零，保持与上界相同的位数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i:<span class="built_in">int</span>,limit_high:<span class="built_in">bool</span>,limit_low:<span class="built_in">bool</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        i:当前处理的位数，从0开始</span></span><br><span class="line"><span class="string">        limit_high：是否受到上界的限制</span></span><br><span class="line"><span class="string">        limit_low :是否受到下界的限制</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> i == n :</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第i个数字可以枚举到哪</span></span><br><span class="line">            lo = <span class="built_in">int</span>(low[i]) <span class="keyword">if</span> limit_low <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            hi = <span class="built_in">int</span>(high[i]) <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo,hi+<span class="number">1</span>):</span><br><span class="line">            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            正确传递限制条件</span></span><br><span class="line"><span class="string">            - 如果当前受到了上界限制并且选择了上界值并且选择了上界值，下一位继续受上界限制</span></span><br><span class="line"><span class="string">            - 下界同理</span></span><br><span class="line"><span class="string">            &quot;&quot;&quot;</span></span><br><span class="line">                res += dfs(i+<span class="number">1</span>,limit_high <span class="keyword">and</span> d==hi,limit_low <span class="keyword">and</span> d==lo)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>,<span class="literal">True</span>,<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>分析</strong></p>
+<p>时间复杂度:O(n)</p>
+<pre>
+<code class="mermaid">
+
+flowchart TD
+    A[开始计算区间数字个数] --&gt; B[预处理数字字符串]
+    B --&gt; C[high转换为字符串
+            low转换为字符串]
+    C --&gt; D[计算数字位数n
+            low补齐前导零]
+    D --&gt; E[调用dfs函数
+            初始参数0 True True]
+    E --&gt; F{DFS递归处理}
+    F --&gt; G{是否处理完所有位数 i等于n}
+    G --&gt;|是| H[返回1 找到有效数字]
+    G --&gt;|否| I[确定当前位数字范围]
+    I --&gt; J[计算下界lo&lt;br&gt;计算上界hi]
+    J --&gt; K[初始化结果res为0]
+    K --&gt; L[循环d从lo到hi]
+    L --&gt; M[更新限制条件&lt;br&gt;递归调用dfs]
+    M --&gt; N[累加结果到res]
+    N --&gt; O{循环是否结束}
+    O --&gt;|否 继续循环| L
+    O --&gt;|是 循环完成| P[返回res结果]
+    H --&gt; Q[返回最终计算结果]
+    P --&gt; Q
+    Q --&gt; R[算法结束]
+    %% 样式定义
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef decision fill:#fbf,stroke:#333,stroke-width:2px;
+    classDef startend fill:#dfd,stroke:#333,stroke-width:2px;
+    class A,R startend;
+    class B,C,D,E,F,G,I,J,K,L,M,N,O,P,Q process;
+    class G decision;
+</code>
+</pre>
+
+<h3 id="V2-考虑前导零"><a href="#V2-考虑前导零" class="headerlink" title="V2 考虑前导零"></a>V2 考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本题解"><a href="#本题解" class="headerlink" title="本题解"></a>本题解</h2><h1 id="leetcode-3753-范围内总波动值-II"><a href="#leetcode-3753-范围内总波动值-II" class="headerlink" title="leetcode 3753 范围内总波动值 II"></a>leetcode 3753 范围内总波动值 II</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>给你两个整数num1和num2，表示一个闭区间 $ [num1,num2] $。</p>
+<p><strong>困难</strong></p>
+<p>一个数字的 <strong>波动值</strong> 定义为该数字中 <strong>峰</strong> 和 <strong>谷</strong> 的总数：</p>
+<ul>
+<li>如果一个数位 <strong>严格大于</strong> 其两个相邻数位，则该数位为 <strong>峰</strong>。</li>
+<li>如果一个数位 <strong>严格小于</strong> 其两个相邻数位，则该数位为 <strong>谷</strong>。</li>
+<li>数字的第一个和最后一个数位 <strong>不能</strong> 是峰或谷。</li>
+<li>任何少于 3 位的数字，其波动值均为 0。</li>
+</ul>
+<p>返回范围 <code>[num1, num2]</code> 内所有数字的波动值之和。</p>
+<p>1&lt;&#x3D; num1 &lt;&#x3D; num2 &lt;&#x3D; $ 10^{15} $</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>给你三个整数 <code>start</code> ，<code>finish</code> 和 <code>limit</code> 。同时给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，表示一个 <strong>正</strong> 整数。</p>
+<p>如果一个 <strong>正</strong> 整数 <code>x</code> 末尾部分是 <code>s</code> （换句话说，<code>s</code> 是 <code>x</code> 的 <strong>后缀</strong>），且 <code>x</code> 中的每个数位至多是 <code>limit</code> ，那么我们称 <code>x</code> 是 <strong>强大的</strong> 。</p>
+<p>请你返回区间 <code>[start..finish]</code> 内强大整数的 <strong>总数目</strong> 。</p>
+<p>如果一个字符串 <code>x</code> 是 <code>y</code> 中某个下标开始（<strong>包括</strong><code>0</code> ），到下标为 <code>y.length - 1</code> 结束的子字符串，那么我们称 <code>x</code> 是 <code>y</code> 的一个后缀。比方说，<code>25</code> 是 <code>5125</code> 的一个后缀，但不是 <code>512</code> 的后缀。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -765,178 +1034,6 @@ timeline
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/23/CAD1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yeah">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yeah的记录栈">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Yeah的记录栈">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/23/CAD1/" class="post-title-link" itemprop="url">数位DP</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2025-11-23 17:14:16 / 修改时间：17:15:44" itemprop="dateCreated datePublished" datetime="2025-11-23T17:14:16+08:00">2025-11-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CS/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CS/%E7%AE%97%E6%B3%95/DP/" itemprop="url" rel="index"><span itemprop="name">DP</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CAD1 数位DP</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/22/cp1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yeah">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yeah的记录栈">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Yeah的记录栈">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/22/cp1/" class="post-title-link" itemprop="url">cp1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-22 22:39:58" itemprop="dateCreated datePublished" datetime="2025-11-22T22:39:58+08:00">2025-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-23 19:33:00" itemprop="dateModified" datetime="2025-11-23T19:33:00+08:00">2025-11-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/compete/" itemprop="url" rel="index"><span itemprop="name">compete</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CP</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/22/python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1177,7 +1274,7 @@ timeline
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-23 19:33:41" itemprop="dateModified" datetime="2025-11-23T19:33:41+08:00">2025-11-23</time>
+      <time title="修改时间：2025-11-24 18:31:44" itemprop="dateModified" datetime="2025-11-24T18:31:44+08:00">2025-11-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1207,30 +1304,14 @@ timeline
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>CA<br>这是算法的readme页，用于快速追踪。算法与数据结构谨遵以下规则分类:</p>
+          <p>CS<br>这是算法的readme页，用于快速追踪。算法与数据结构谨遵以下规则分类:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-主标签:范式</span><br><span class="line">-辅标签:数据结构</span><br></pre></td></tr></table></figure>
-<p>即涉及结合应用时会优先根据范式分类。<br><strong>算法学习全景路线图</strong><br>这个目录分为五个主要阶段，复制的AI</p>
-<h2 id="阶段一：编程与数据结构基础（打好地基）"><a href="#阶段一：编程与数据结构基础（打好地基）" class="headerlink" title="阶段一：编程与数据结构基础（打好地基）"></a>阶段一：编程与数据结构基础（打好地基）</h2><p>在接触算法之前，必须熟练掌握至少一门编程语言（如 Python, Java, C++）和最基本的数据结构。</p>
-<h3 id="编程语言基础"><a href="#编程语言基础" class="headerlink" title="编程语言基础"></a>编程语言基础</h3><p>选择一门语言（Python 推荐给初学者，语法简洁；Java&#x2F;C++ 常见于面试和竞赛）。<br>掌握：基本语法、变量、数据类型、循环、条件判断、函数。</p>
-<h3 id="核心数据结构"><a href="#核心数据结构" class="headerlink" title="核心数据结构"></a>核心数据结构</h3><p>数组 &amp; 字符串： 基础中的基础，理解索引、遍历和基本操作。<br>链表： 单链表、双链表，理解指针&#x2F;引用和增删改查操作。<br>栈 &amp; 队列： 理解其后进先出（LIFO）和先进先出（FIFO）的特性及应用场景。<br>哈希表： 理解其原理，掌握如何用于快速查找。<br>集合： 理解去重和成员检查的特性。</p>
-<h3 id="目标：-能够不假思索地用代码实现上述数据结构，并理解它们的时间-空间复杂度。"><a href="#目标：-能够不假思索地用代码实现上述数据结构，并理解它们的时间-空间复杂度。" class="headerlink" title="目标： 能够不假思索地用代码实现上述数据结构，并理解它们的时间&#x2F;空间复杂度。"></a>目标： 能够不假思索地用代码实现上述数据结构，并理解它们的时间&#x2F;空间复杂度。</h3><h2 id="阶段二：算法入门与核心思想（掌握“渔”）"><a href="#阶段二：算法入门与核心思想（掌握“渔”）" class="headerlink" title="阶段二：算法入门与核心思想（掌握“渔”）"></a>阶段二：算法入门与核心思想（掌握“渔”）</h2><p>学习最基础的算法思想，它们是解决更复杂问题的基石。</p>
-<h3 id="时间复杂度-空间复杂度分析"><a href="#时间复杂度-空间复杂度分析" class="headerlink" title="时间复杂度 &amp; 空间复杂度分析"></a>时间复杂度 &amp; 空间复杂度分析</h3><p>学会使用大O表示法分析算法的效率。<br>这是衡量算法优劣的核心指标，必须掌握。</p>
-<h3 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h3><h4 id="排序算法："><a href="#排序算法：" class="headerlink" title="排序算法："></a>排序算法：</h4><p>初级：冒泡排序、选择排序、插入排序。<br>高级：归并排序、快速排序、堆排序（理解分治思想）。<br>理解它们的思想、代码实现和时间复杂度。</p>
-<h4 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h4><p>理解递归函数、基线条件、递归条件。<br>练习：阶乘、斐波那契数列、汉诺塔。</p>
-<h4 id="二分查找："><a href="#二分查找：" class="headerlink" title="二分查找："></a>二分查找：</h4><p>应用于已排序的数组，理解其O(log n)的高效性。</p>
-<h3 id="初等数据结构进阶"><a href="#初等数据结构进阶" class="headerlink" title="初等数据结构进阶"></a>初等数据结构进阶</h3><h4 id="树："><a href="#树：" class="headerlink" title="树："></a>树：</h4><p>二叉树、二叉搜索树（BST）。<br>树的遍历：前序、中序、后序、层序。</p>
-<h4 id="堆："><a href="#堆：" class="headerlink" title="堆："></a>堆：</h4><p>最大堆、最小堆。<br>应用：优先队列、Top K 问题。<br>目标： 理解并实现上述算法，能独立分析其复杂度。</p>
-<h2 id="阶段三：算法核心思想深化（攻坚克难）"><a href="#阶段三：算法核心思想深化（攻坚克难）" class="headerlink" title="阶段三：算法核心思想深化（攻坚克难）"></a>阶段三：算法核心思想深化（攻坚克难）</h2><p>这是算法学习的核心和难点，需要大量练习来融会贯通。</p>
-<h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><p>思想：将大问题分解为小问题，解决小问题，合并结果。<br>经典应用：归并排序、快速排序。</p>
-<h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><p>思想：每一步都采取当前状态下最优的选择。<br>经典问题：区间调度、硬币找零、霍夫曼编码。<br>###回溯算法<br>思想：一种试错思想，走不通就退回（回溯）。<br>经典问题：N皇后、全排列、组合、子集。</p>
-<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>思想：将问题分解为重叠子问题，通过保存子问题的解来避免重复计算。<br>核心要素：状态定义、状态转移方程、初始条件。<br>经典问题：<br>入门：斐波那契数列、爬楼梯。<br>经典：背包问题、最长公共子序列、最长递增子序列、编辑距离。</p>
-<h3 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h3><p>深度优先搜索（DFS）： “不撞南墙不回头”，常用递归或栈实现。<br>广度优先搜索（BFS）： “一圈一圈地扩散”，常用队列实现，常用于找最短路径。<br>应用：图的遍历、迷宫问题。</p>
-<h3 id="图论算法"><a href="#图论算法" class="headerlink" title="图论算法"></a>图论算法</h3><p>图的基本表示：邻接矩阵、邻接表。<br>图的遍历：DFS, BFS<br>最短路径算法：Dijkstra算法（无负权边）、Bellman-Ford算法（含负权边）。<br>最小生成树算法：Prim算法、Kruskal算法。<br>拓扑排序：用于有向无环图。</p>
-<h3 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h3><p>深刻理解五大核心思想（分治、贪心、回溯、动态规划、搜索），并能识别和解决相应类型的题目。</p>
-<h2 id="阶段四：高级主题与专项突破（成为专家）"><a href="#阶段四：高级主题与专项突破（成为专家）" class="headerlink" title="阶段四：高级主题与专项突破（成为专家）"></a>阶段四：高级主题与专项突破（成为专家）</h2><p>在掌握核心思想后，可以学习更高级的数据结构和算法，应对更复杂的问题。</p>
-<h3 id="高级数据结构"><a href="#高级数据结构" class="headerlink" title="高级数据结构"></a>高级数据结构</h3><p>并查集： 用于处理不相交集合的合并与查询问题。<br>字典树： 用于高效存储和检索字符串数据集。<br>线段树 &amp; 树状数组： 用于处理数组区间查询和更新。<br>高级树： AVL树、红黑树（理解其自平衡思想即可，不要求手写）。</p>
-<h3 id="其他高级算法"><a href="#其他高级算法" class="headerlink" title="其他高级算法"></a>其他高级算法</h3><p>字符串匹配算法： KMP算法。<br>位运算： 巧用位运算解决问题。<br>数学相关： 素数判定、最大公约数、最小公倍数。</p>
-<h2 id="阶段五：实践与应用（学以致用）"><a href="#阶段五：实践与应用（学以致用）" class="headerlink" title="阶段五：实践与应用（学以致用）"></a>阶段五：实践与应用（学以致用）</h2><p>理论结合实践，将知识转化为能力。</p>
+<p>即涉及结合应用时会优先根据范式分类。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">1. 核心领域 (固定使用 CS)</span><br><span class="line">[CS, 算法]</span><br><span class="line">[CS, 数据结构]</span><br><span class="line">[CS, 问题]</span><br><span class="line">[CS, 系统设计]</span><br><span class="line">[CS, 基础理论]</span><br><span class="line">2. 算法范式细分</span><br><span class="line">[CS, 算法, 分治算法]</span><br><span class="line">[CS, 算法, 动态规划]</span><br><span class="line">[CS, 算法, 贪心算法]</span><br><span class="line">[CS, 算法, 回溯算法]</span><br><span class="line">[CS, 算法, 搜索算法]</span><br><span class="line">[CS, 算法, 滑动窗口]</span><br><span class="line">[CS, 算法, 双指针]</span><br><span class="line">[CS, 算法, 位运算]</span><br><span class="line">3. 数据结构细分</span><br><span class="line">[CS, 数据结构, 线性结构]</span><br><span class="line">[CS, 数据结构, 线性结构, 数组]</span><br><span class="line">[CS, 数据结构, 线性结构, 链表]</span><br><span class="line">[CS, 数据结构, 线性结构, 栈]</span><br><span class="line">[CS, 数据结构, 线性结构, 队列]</span><br><span class="line">[CS, 数据结构, 线性结构, 哈希表]</span><br><span class="line">[CS, 数据结构, 树形结构]</span><br><span class="line">[CS, 数据结构, 树形结构, 二叉树]</span><br><span class="line">[CS, 数据结构, 树形结构, 二叉搜索树]</span><br><span class="line">[CS, 数据结构, 树形结构, 堆]</span><br><span class="line">[CS, 数据结构, 树形结构, 字典树]</span><br><span class="line">[CS, 数据结构, 图结构]</span><br><span class="line">[CS, 数据结构, 高级结构] # 并查集、线段树等</span><br><span class="line">4. 问题类型细分</span><br><span class="line">[CS, 问题, 计数问题]</span><br><span class="line">[CS, 问题, 最值问题]</span><br><span class="line">[CS, 问题, 查找问题]</span><br><span class="line">[CS, 问题, 路径问题]</span><br><span class="line">[CS, 问题, 字符串问题]</span><br><span class="line">[CS, 问题, 区间问题]</span><br><span class="line">[CS, 问题, 矩阵问题]</span><br><span class="line">[CS, 问题, 排列组合问题]</span><br><span class="line">5. 动态规划专项</span><br><span class="line">[CS, 算法, 动态规划, 数位DP]</span><br><span class="line">[CS, 算法, 动态规划, 区间DP]</span><br><span class="line">[CS, 算法, 动态规划, 树形DP]</span><br><span class="line">[CS, 算法, 动态规划, 状态压缩DP]</span><br><span class="line">[CS, 算法, 动态规划, 背包DP]</span><br><span class="line">[CS, 算法, 动态规划, 序列DP]</span><br><span class="line">6. 搜索算法专项</span><br><span class="line">[CS, 算法, 搜索算法, 深度优先搜索]</span><br><span class="line">[CS, 算法, 搜索算法, 广度优先搜索]</span><br><span class="line">[CS, 算法, 搜索算法, 二分查找]</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="实践与应用"><a href="#实践与应用" class="headerlink" title="实践与应用"></a>实践与应用</h1><p>理论结合实践，将知识转化为能力。</p>
 <h3 id="刷题平台"><a href="#刷题平台" class="headerlink" title="刷题平台"></a>刷题平台</h3><p>LeetCode： 求职面试首选，按标签、难度、公司分类。<br>《剑指Offer》： 经典面试题汇总。<br>牛客网： 国内公司真题和面试经验。</p>
 <h3 id="刷题策略"><a href="#刷题策略" class="headerlink" title="刷题策略"></a>刷题策略</h3><p>按类型刷： 集中一段时间攻克一个算法类型（如一周专攻动态规划）。<br>由易到难： 从简单题开始，建立信心，再逐步挑战中等和困难。<br>总结归纳： 每做完一道题，记录解题思路、关键点和易错点。准备一个自己的“解题模板”。<br>一题多解： 思考是否有更优的解法。</p>
 <h3 id="参与编程竞赛（可选）"><a href="#参与编程竞赛（可选）" class="headerlink" title="参与编程竞赛（可选）"></a>参与编程竞赛（可选）</h3><p>ACM-ICPC： 大学生顶级赛事。<br>LeetCode周赛&#x2F;双周赛： 锻炼快速解题和抗压能力。<br>系统设计入门（面向求职）<br>学习如何设计大规模系统，如Twitter、YouTube等，这与算法相辅相成。</p>

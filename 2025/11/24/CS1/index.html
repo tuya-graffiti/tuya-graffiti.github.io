@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tuya-graffiti.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="数位DP数位是指把一个数字按照个、十、百、千等等一位一位地拆开，关注它每一位上的数字。如果拆的是十进制数，那么每一位数字都是 0~9，其他进制可类比十进制。 数位 DP：用来解决一类特定问题，这种问题比较好辨认，一般具有这几个特征：  要求统计满足一定条件的数的数量（即，最终目的为计数）； 这些条件经过转化后可以使用「数位」的思想去理解和判断； 输入会提供一个数字区间（有时也只提供上界）来作为统计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数位DP">
+<meta property="og:url" content="https://tuya-graffiti.github.io/2025/11/24/CS1/index.html">
+<meta property="og:site_name" content="Yeah的记录栈">
+<meta property="og:description" content="数位DP数位是指把一个数字按照个、十、百、千等等一位一位地拆开，关注它每一位上的数字。如果拆的是十进制数，那么每一位数字都是 0~9，其他进制可类比十进制。 数位 DP：用来解决一类特定问题，这种问题比较好辨认，一般具有这几个特征：  要求统计满足一定条件的数的数量（即，最终目的为计数）； 这些条件经过转化后可以使用「数位」的思想去理解和判断； 输入会提供一个数字区间（有时也只提供上界）来作为统计">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-24T10:32:09.000Z">
+<meta property="article:modified_time" content="2025-11-24T14:12:37.126Z">
+<meta property="article:author" content="Yeah">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tuya-graffiti.github.io/2025/11/24/CS1/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tuya-graffiti.github.io/2025/11/24/CS1/","path":"2025/11/24/CS1/","title":"数位DP"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数位DP | Yeah的记录栈</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yeah的记录栈</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我心我神，我庙我祝</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E4%BD%8DDP"><span class="nav-text">数位DP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">基本原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="nav-text">通用模板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E8%A7%A3"><span class="nav-text">模板解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#V1-%E4%B8%8D%E8%80%83%E8%99%91%E5%89%8D%E5%AF%BC%E9%9B%B6"><span class="nav-text">V1 不考虑前导零</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V2-%E8%80%83%E8%99%91%E5%89%8D%E5%AF%BC%E9%9B%B6"><span class="nav-text">V2 考虑前导零</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E9%A2%98%E8%A7%A3"><span class="nav-text">本题解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode-3753-%E8%8C%83%E5%9B%B4%E5%86%85%E6%80%BB%E6%B3%A2%E5%8A%A8%E5%80%BC-II"><span class="nav-text">leetcode 3753 范围内总波动值 II</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-1"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yeah</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tuya-graffiti.github.io/2025/11/24/CS1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yeah">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数位DP | Yeah的记录栈">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数位DP
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-24 18:32:09 / 修改时间：22:12:37" itemprop="dateCreated datePublished" datetime="2025-11-24T18:32:09+08:00">2025-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CS/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%8C%E6%95%B0%E4%BD%8DDP/" itemprop="url" rel="index"><span itemprop="name">动态规划，数位DP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h1><p>数位是指把一个数字按照个、十、百、千等等一位一位地拆开，关注它每一位上的数字。如果拆的是十进制数，那么每一位数字都是 0~9，其他进制可类比十进制。</p>
+<p>数位 DP：用来解决一类特定问题，这种问题比较好辨认，一般具有这几个特征：</p>
+<ol>
+<li>要求统计满足一定条件的数的数量（即，最终目的为计数）；</li>
+<li>这些条件经过转化后可以使用「数位」的思想去理解和判断；</li>
+<li>输入会提供一个数字区间（有时也只提供上界）来作为统计的限制；</li>
+<li>上界很大（比如 1018<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" title="10^{18}">），暴力枚举验证会超时。</li>
+</ol>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>考虑人类计数的方式，最朴素的计数就是从小到大开始依次加一。但我们发现对于位数比较多的数，这样的过程中有许多重复的部分。例如，从 7000 数到 7999、从 8000 数到 8999、和从 9000 数到 9999 的过程非常相似，它们都是后三位从 000 变到 999，不一样的地方只有千位这一位，所以我们可以把这些过程归并起来，将这些过程中产生的计数答案也都存在一个通用的数组里。此数组根据题目具体要求设置状态，用递推或 DP 的方式进行状态转移。</p>
+<p>数位 DP 中通常会利用常规计数问题技巧，比如把一个区间内的答案拆成两部分相减（即 ans[𝑙,𝑟] &#x3D;ans[0,𝑟] −ans[0,𝑙−1]<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" title="\mathit{ans}_{[l, r]} &#x3D; \mathit{ans}_{[0, r]}-\mathit{ans}_{[0, l - 1]}">）</p>
+<p>那么有了通用答案数组，接下来就是统计答案。统计答案可以选择记忆化搜索，也可以选择循环迭代递推。为了不重不漏地统计所有不超过上限的答案，要从高到低枚举每一位，再考虑每一位都可以填哪些数字，最后利用通用答案数组统计答案。</p>
+<h1 id="通用模板"><a href="#通用模板" class="headerlink" title="通用模板"></a>通用模板</h1><p>leetcode 2999.统计强大整数的数目</p>
+<p><strong>困难</strong></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你三个整数 <code>start</code> ，<code>finish</code> 和 <code>limit</code> 。同时给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，表示一个 <strong>正</strong> 整数。</p>
+<p>如果一个 <strong>正</strong> 整数 <code>x</code> 末尾部分是 <code>s</code> （换句话说，<code>s</code> 是 <code>x</code> 的 <strong>后缀</strong>），且 <code>x</code> 中的每个数位至多是 <code>limit</code> ，那么我们称 <code>x</code> 是 <strong>强大的</strong> 。</p>
+<p>请你返回区间 <code>[start..finish]</code> 内强大整数的 <strong>总数目</strong> 。</p>
+<p>如果一个字符串 <code>x</code> 是 <code>y</code> 中某个下标开始（<strong>包括</strong><code>0</code> ），到下标为 <code>y.length - 1</code> 结束的子字符串，那么我们称 <code>x</code> 是 <code>y</code> 的一个后缀。比方说，<code>25</code> 是 <code>5125</code> 的一个后缀，但不是 <code>512</code> 的后缀。</p>
+<h2 id="模板解"><a href="#模板解" class="headerlink" title="模板解"></a>模板解</h2><h3 id="V1-不考虑前导零"><a href="#V1-不考虑前导零" class="headerlink" title="V1 不考虑前导零"></a>V1 不考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">数位DP 通用模板V1 不考虑前导零</span></span><br><span class="line"><span class="string">@cache 记忆化搜索缓存器 python内置装饰器</span></span><br><span class="line"><span class="string">1.前面的每个数字，是否都等于上界的每个数字。不等于则下一位0-9任选，等于下一位则0-上界</span></span><br><span class="line"><span class="string">2.同理推，当需要下界时的处理方案</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numberOfPowerfulInt</span>(<span class="params">self,start: <span class="built_in">int</span>, finish: <span class="built_in">int</span></span>):</span><br><span class="line">        high = <span class="built_in">str</span>(finish)</span><br><span class="line">        low = <span class="built_in">str</span>(start)</span><br><span class="line">        n = <span class="built_in">len</span>(high)</span><br><span class="line">        low = <span class="string">&#x27;0&#x27;</span> *(n-<span class="built_in">len</span>(low))+low <span class="comment"># 下界补齐前导零，保持与上界相同的位数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i:<span class="built_in">int</span>,limit_high:<span class="built_in">bool</span>,limit_low:<span class="built_in">bool</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        i:当前处理的位数，从0开始</span></span><br><span class="line"><span class="string">        limit_high：是否受到上界的限制</span></span><br><span class="line"><span class="string">        limit_low :是否受到下界的限制</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> i == n :</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第i个数字可以枚举到哪</span></span><br><span class="line">            lo = <span class="built_in">int</span>(low[i]) <span class="keyword">if</span> limit_low <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            hi = <span class="built_in">int</span>(high[i]) <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo,hi+<span class="number">1</span>):</span><br><span class="line">            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            正确传递限制条件</span></span><br><span class="line"><span class="string">            - 如果当前受到了上界限制并且选择了上界值并且选择了上界值，下一位继续受上界限制</span></span><br><span class="line"><span class="string">            - 下界同理</span></span><br><span class="line"><span class="string">            &quot;&quot;&quot;</span></span><br><span class="line">                res += dfs(i+<span class="number">1</span>,limit_high <span class="keyword">and</span> d==hi,limit_low <span class="keyword">and</span> d==lo)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>,<span class="literal">True</span>,<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>分析</strong></p>
+<p>时间复杂度:O(n)</p>
+<pre>
+<code class="mermaid">
+
+flowchart TD
+    A[开始计算区间数字个数] --&gt; B[预处理数字字符串]
+    B --&gt; C[high转换为字符串
+            low转换为字符串]
+    C --&gt; D[计算数字位数n
+            low补齐前导零]
+    D --&gt; E[调用dfs函数
+            初始参数0 True True]
+    E --&gt; F{DFS递归处理}
+    F --&gt; G{是否处理完所有位数 i等于n}
+    G --&gt;|是| H[返回1 找到有效数字]
+    G --&gt;|否| I[确定当前位数字范围]
+    I --&gt; J[计算下界lo&lt;br&gt;计算上界hi]
+    J --&gt; K[初始化结果res为0]
+    K --&gt; L[循环d从lo到hi]
+    L --&gt; M[更新限制条件&lt;br&gt;递归调用dfs]
+    M --&gt; N[累加结果到res]
+    N --&gt; O{循环是否结束}
+    O --&gt;|否 继续循环| L
+    O --&gt;|是 循环完成| P[返回res结果]
+    H --&gt; Q[返回最终计算结果]
+    P --&gt; Q
+    Q --&gt; R[算法结束]
+    %% 样式定义
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef decision fill:#fbf,stroke:#333,stroke-width:2px;
+    classDef startend fill:#dfd,stroke:#333,stroke-width:2px;
+    class A,R startend;
+    class B,C,D,E,F,G,I,J,K,L,M,N,O,P,Q process;
+    class G decision;
+</code>
+</pre>
+
+<h3 id="V2-考虑前导零"><a href="#V2-考虑前导零" class="headerlink" title="V2 考虑前导零"></a>V2 考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本题解"><a href="#本题解" class="headerlink" title="本题解"></a>本题解</h2><h1 id="leetcode-3753-范围内总波动值-II"><a href="#leetcode-3753-范围内总波动值-II" class="headerlink" title="leetcode 3753 范围内总波动值 II"></a>leetcode 3753 范围内总波动值 II</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>给你两个整数num1和num2，表示一个闭区间 $ [num1,num2] $。</p>
+<p><strong>困难</strong></p>
+<p>一个数字的 <strong>波动值</strong> 定义为该数字中 <strong>峰</strong> 和 <strong>谷</strong> 的总数：</p>
+<ul>
+<li>如果一个数位 <strong>严格大于</strong> 其两个相邻数位，则该数位为 <strong>峰</strong>。</li>
+<li>如果一个数位 <strong>严格小于</strong> 其两个相邻数位，则该数位为 <strong>谷</strong>。</li>
+<li>数字的第一个和最后一个数位 <strong>不能</strong> 是峰或谷。</li>
+<li>任何少于 3 位的数字，其波动值均为 0。</li>
+</ul>
+<p>返回范围 <code>[num1, num2]</code> 内所有数字的波动值之和。</p>
+<p>1&lt;&#x3D; num1 &lt;&#x3D; num2 &lt;&#x3D; $ 10^{15} $</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>给你三个整数 <code>start</code> ，<code>finish</code> 和 <code>limit</code> 。同时给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，表示一个 <strong>正</strong> 整数。</p>
+<p>如果一个 <strong>正</strong> 整数 <code>x</code> 末尾部分是 <code>s</code> （换句话说，<code>s</code> 是 <code>x</code> 的 <strong>后缀</strong>），且 <code>x</code> 中的每个数位至多是 <code>limit</code> ，那么我们称 <code>x</code> 是 <strong>强大的</strong> 。</p>
+<p>请你返回区间 <code>[start..finish]</code> 内强大整数的 <strong>总数目</strong> 。</p>
+<p>如果一个字符串 <code>x</code> 是 <code>y</code> 中某个下标开始（<strong>包括</strong><code>0</code> ），到下标为 <code>y.length - 1</code> 结束的子字符串，那么我们称 <code>x</code> 是 <code>y</code> 的一个后缀。比方说，<code>25</code> 是 <code>5125</code> 的一个后缀，但不是 <code>512</code> 的后缀。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/24/L1/" rel="prev" title="《精力管理》">
+                  <i class="fa fa-angle-left"></i> 《精力管理》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/24/CS2/" rel="next" title="动态规划">
+                  动态规划 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yeah</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
