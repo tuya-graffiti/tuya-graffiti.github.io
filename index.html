@@ -205,7 +205,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-11-24 19:00:46 / 修改时间：19:14:12" itemprop="dateCreated datePublished" datetime="2025-11-24T19:00:46+08:00">2025-11-24</time>
+      <time title="创建时间：2025-11-24 19:00:46 / 修改时间：22:26:03" itemprop="dateCreated datePublished" datetime="2025-11-24T19:00:46+08:00">2025-11-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,11 +240,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如：有N件物品和一个最多能背重量为W 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大。</span><br><span class="line"></span><br><span class="line">动态规划中dp[j]是由dp[j-weight[i]]推导出来的，然后取max(dp[j], dp[j - weight[i]] + value[i])。</span><br><span class="line">但如果是贪心呢，每次拿物品选一个最大的或者最小的就完事了，和上一个状态没有关系。</span><br><span class="line"></span><br><span class="line">所以贪心解决不了动态规划的问题。</span><br></pre></td></tr></table></figure>
 
 <h1 id="DP-解题步骤"><a href="#DP-解题步骤" class="headerlink" title="DP 解题步骤"></a>DP 解题步骤</h1><h2 id="五步曲"><a href="#五步曲" class="headerlink" title="五步曲:"></a>五步曲:</h2><ol>
-<li>确定dp数组（dp table）以及下标的含义</li>
-<li>确定递推公式</li>
-<li>dp数组如何初始化</li>
-<li>确定遍历顺序</li>
-<li>举例推导dp数组</li>
+<li>状态</li>
+<li>递推公式</li>
+<li>初始化</li>
+<li>遍历顺序</li>
+<li>举例推导</li>
 </ol>
 <h1 id="DP刷题大纲"><a href="#DP刷题大纲" class="headerlink" title="DP刷题大纲"></a>DP刷题大纲</h1><h2 id="代码随想录"><a href="#代码随想录" class="headerlink" title="代码随想录"></a>代码随想录</h2><pre><code class="highlight mermaid">graph LR
 %% 动态规划leetcode刷题大纲
@@ -309,9 +309,15 @@ F --&gt; F1[子序列 不连续] &amp; F2[子序列 连续 ] &amp; F3[编辑距�
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-11-24 18:32:09 / 修改时间：22:12:37" itemprop="dateCreated datePublished" datetime="2025-11-24T18:32:09+08:00">2025-11-24</time>
+      <time title="创建时间：2025-11-24 18:32:09" itemprop="dateCreated datePublished" datetime="2025-11-24T18:32:09+08:00">2025-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-25 00:27:50" itemprop="dateModified" datetime="2025-11-25T00:27:50+08:00">2025-11-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -361,47 +367,68 @@ F --&gt; F1[子序列 不连续] &amp; F2[子序列 连续 ] &amp; F3[编辑距�
 <h2 id="模板解"><a href="#模板解" class="headerlink" title="模板解"></a>模板解</h2><h3 id="V1-不考虑前导零"><a href="#V1-不考虑前导零" class="headerlink" title="V1 不考虑前导零"></a>V1 不考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">数位DP 通用模板V1 不考虑前导零</span></span><br><span class="line"><span class="string">@cache 记忆化搜索缓存器 python内置装饰器</span></span><br><span class="line"><span class="string">1.前面的每个数字，是否都等于上界的每个数字。不等于则下一位0-9任选，等于下一位则0-上界</span></span><br><span class="line"><span class="string">2.同理推，当需要下界时的处理方案</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numberOfPowerfulInt</span>(<span class="params">self,start: <span class="built_in">int</span>, finish: <span class="built_in">int</span></span>):</span><br><span class="line">        high = <span class="built_in">str</span>(finish)</span><br><span class="line">        low = <span class="built_in">str</span>(start)</span><br><span class="line">        n = <span class="built_in">len</span>(high)</span><br><span class="line">        low = <span class="string">&#x27;0&#x27;</span> *(n-<span class="built_in">len</span>(low))+low <span class="comment"># 下界补齐前导零，保持与上界相同的位数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i:<span class="built_in">int</span>,limit_high:<span class="built_in">bool</span>,limit_low:<span class="built_in">bool</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        i:当前处理的位数，从0开始</span></span><br><span class="line"><span class="string">        limit_high：是否受到上界的限制</span></span><br><span class="line"><span class="string">        limit_low :是否受到下界的限制</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> i == n :</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第i个数字可以枚举到哪</span></span><br><span class="line">            lo = <span class="built_in">int</span>(low[i]) <span class="keyword">if</span> limit_low <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            hi = <span class="built_in">int</span>(high[i]) <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo,hi+<span class="number">1</span>):</span><br><span class="line">            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            正确传递限制条件</span></span><br><span class="line"><span class="string">            - 如果当前受到了上界限制并且选择了上界值并且选择了上界值，下一位继续受上界限制</span></span><br><span class="line"><span class="string">            - 下界同理</span></span><br><span class="line"><span class="string">            &quot;&quot;&quot;</span></span><br><span class="line">                res += dfs(i+<span class="number">1</span>,limit_high <span class="keyword">and</span> d==hi,limit_low <span class="keyword">and</span> d==lo)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>,<span class="literal">True</span>,<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
 <p><strong>分析</strong></p>
-<p>时间复杂度:O(n)</p>
+<p>时间复杂度:O(nD),D&#x3D;10,n&#x3D;O(log finish)</p>
 <pre>
 <code class="mermaid">
 
 flowchart TD
-    A[开始计算区间数字个数] --&gt; B[预处理数字字符串]
-    B --&gt; C[high转换为字符串
-            low转换为字符串]
-    C --&gt; D[计算数字位数n
-            low补齐前导零]
-    D --&gt; E[调用dfs函数
-            初始参数0 True True]
-    E --&gt; F{DFS递归处理}
+    A[开始数位DP计算] --&gt; B[第0步: 数据预处理]
+  
+    B --&gt; C[&quot;high &#x3D; strfinish&lt;br&gt;low &#x3D; strstart&lt;br&gt;n &#x3D; lenhigh&lt;br&gt;low补齐前导零&quot;]
+  
+    C --&gt; D[第一步: DP状态定义]
+  
+    D --&gt; E[&quot;定义状态: dfsi, limit_high, limit_low&lt;br&gt;i: 当前处理位数0-n&lt;br&gt;limit_high: 是否受上界限制&lt;br&gt;limit_low: 是否受下界限制&quot;]
+  
+    E --&gt; F[第二步: 递推公式]
     F --&gt; G{是否处理完所有位数 i等于n}
-    G --&gt;|是| H[返回1 找到有效数字]
-    G --&gt;|否| I[确定当前位数字范围]
-    I --&gt; J[计算下界lo&lt;br&gt;计算上界hi]
-    J --&gt; K[初始化结果res为0]
-    K --&gt; L[循环d从lo到hi]
-    L --&gt; M[更新限制条件&lt;br&gt;递归调用dfs]
-    M --&gt; N[累加结果到res]
-    N --&gt; O{循环是否结束}
-    O --&gt;|否 继续循环| L
-    O --&gt;|是 循环完成| P[返回res结果]
-    H --&gt; Q[返回最终计算结果]
-    P --&gt; Q
-    Q --&gt; R[算法结束]
+  
+    G --&gt;|是| H[&quot;返回1&lt;br&gt;成功构造一个有效数字&quot;]
+    G --&gt;|否| I[计算当前位数字范围]
+  
+    I --&gt; J[&quot;lo &#x3D; limit_low ? intlowi : 0&lt;br&gt;hi &#x3D; limit_high ? inthighi : 9&quot;]
+    J --&gt; K[初始化结果res&#x3D;0]
+    K --&gt; L[循环枚举数字d从lo到hi]
+  
+    L --&gt; M[&quot;更新限制条件:&lt;br&gt;new_limit_high &#x3D; limit_high and d&#x3D;&#x3D;hi&lt;br&gt;new_limit_low &#x3D; limit_low and d&#x3D;&#x3D;lo&quot;]
+    M --&gt; N[&quot;递归调用: dfsi+1, new_limit_high, new_limit_low&quot;]
+    N --&gt; O[累加结果到res]
+  
+    O --&gt; P{是否循环结束}
+    P --&gt;|否| L
+    P --&gt;|是| Q[返回res]
+  
+    H --&gt; R[第三步: 初始化]
+    Q --&gt; R
+  
+    R --&gt; S[&quot;基准情况: i&#x3D;&#x3D;n时返回1&lt;br&gt;表示找到一个完整数字&quot;]
+  
+    S --&gt; T[第四步: 遍历顺序]
+    T --&gt; U[&quot;主顺序: 高位→低位 i:0→n&lt;br&gt;次顺序: 数字小→大 d:lo→hi&lt;br&gt;依赖: 当前状态→下一状态&quot;]
+  
+    U --&gt; V[算法结束 返回结果]
+  
     %% 样式定义
-    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef decision fill:#fbf,stroke:#333,stroke-width:2px;
-    classDef startend fill:#dfd,stroke:#333,stroke-width:2px;
-    class A,R startend;
-    class B,C,D,E,F,G,I,J,K,L,M,N,O,P,Q process;
-    class G decision;
+    classDef step0 fill:#ffebee,stroke:#c62828,stroke-width:3px;
+    classDef step1 fill:#e1f5fe,stroke:#01579b,stroke-width:3px;
+    classDef step2 fill:#f3e5f5,stroke:#4a148c,stroke-width:3px;
+    classDef step3 fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px;
+    classDef step4 fill:#fff3e0,stroke:#e65100,stroke-width:3px;
+    classDef startend fill:#1e88e5,stroke:#0d47a1,stroke-width:3px,color:white;
+  
+    class A,V startend;
+    class B,C step0;
+    class D,E step1;
+    class F,G,H,I,J,K,L,M,N,O,P,Q step2;
+    class R,S step3;
+    class T,U step4;
 </code>
 </pre>
 
-<h3 id="V2-考虑前导零"><a href="#V2-考虑前导零" class="headerlink" title="V2 考虑前导零"></a>V2 考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="V2-考虑前导零"><a href="#V2-考虑前导零" class="headerlink" title="V2 考虑前导零"></a>V2 考虑前导零</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">前导零有影响的情况:即统计跟长度有关的数据下。</span></span><br><span class="line"><span class="string">需要添加新的参数:is_num</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numberOfPowerfulInt</span>(<span class="params">self, start: <span class="built_in">int</span>, finish: <span class="built_in">int</span></span>):</span><br><span class="line">        high = <span class="built_in">str</span>(finish)</span><br><span class="line">        low = <span class="built_in">str</span>(start)</span><br><span class="line">        n = <span class="built_in">len</span>(high)</span><br><span class="line">        low = <span class="string">&#x27;0&#x27;</span> * (n - <span class="built_in">len</span>(low)) + low  <span class="comment"># 下界补齐前导零，保持与上界相同的位数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i: <span class="built_in">int</span>, limit_high: <span class="built_in">bool</span>, limit_low: <span class="built_in">bool</span>, is_num: <span class="built_in">bool</span></span>):</span><br><span class="line">            <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            i: 当前处理的位数，从0开始</span></span><br><span class="line"><span class="string">            limit_high: 是否受到上界的限制</span></span><br><span class="line"><span class="string">            limit_low: 是否受到下界的限制</span></span><br><span class="line"><span class="string">            is_num: 表示前面是否填了非零数字</span></span><br><span class="line"><span class="string">            &quot;&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> i == n:</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">int</span>(is_num)  <span class="comment"># 只有填过非零数字才算有效数字</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 如果前面都是0，当前位可以继续填0</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> is_num:</span><br><span class="line">                <span class="comment"># 填0的情况，限制条件特殊处理</span></span><br><span class="line">                <span class="comment"># 填0时，上界限制保持，下界限制只有在low[i]==&#x27;0&#x27;时才保持</span></span><br><span class="line">                new_limit_low = limit_low <span class="keyword">and</span> (low[i] == <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">                res += dfs(i + <span class="number">1</span>, limit_high, new_limit_low, <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 确定当前位数字范围</span></span><br><span class="line">            lo = <span class="number">0</span> <span class="keyword">if</span> <span class="keyword">not</span> is_num <span class="keyword">else</span> (<span class="built_in">int</span>(low[i]) <span class="keyword">if</span> limit_low <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">            hi = <span class="built_in">int</span>(high[i]) <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 调整下界：如果前面都是0，当前位不能填0（因为0已经在上面单独处理了）</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> is_num:</span><br><span class="line">                lo = <span class="built_in">max</span>(lo, <span class="number">1</span>)  <span class="comment"># 第一个非零数字至少从1开始</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 枚举非零数字</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo, hi + <span class="number">1</span>):</span><br><span class="line">                res += dfs(i + <span class="number">1</span>,</span><br><span class="line">                          limit_high <span class="keyword">and</span> d == hi,</span><br><span class="line">                          limit_low <span class="keyword">and</span> d == lo,</span><br><span class="line">                          <span class="literal">True</span>)  <span class="comment"># 填了非零数字，is_num变为True</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>, <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>)  <span class="comment"># 初始时前面没有填数字</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="本题解"><a href="#本题解" class="headerlink" title="本题解"></a>本题解</h2><h1 id="leetcode-3753-范围内总波动值-II"><a href="#leetcode-3753-范围内总波动值-II" class="headerlink" title="leetcode 3753 范围内总波动值 II"></a>leetcode 3753 范围内总波动值 II</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>给你两个整数num1和num2，表示一个闭区间 $ [num1,num2] $。</p>
+<h2 id="本题解"><a href="#本题解" class="headerlink" title="本题解"></a>本题解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numberOfPowerfulInt</span>(<span class="params">self, start: <span class="built_in">int</span>, finish: <span class="built_in">int</span>, limit: <span class="built_in">int</span>, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        high = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(finish)))  <span class="comment"># 避免在 dfs 中频繁调用 int()</span></span><br><span class="line">        n = <span class="built_in">len</span>(high)</span><br><span class="line">        low = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(start).zfill(n)))  <span class="comment"># 补前导零，和 high 对齐</span></span><br><span class="line">        diff = n - <span class="built_in">len</span>(s)</span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i: <span class="built_in">int</span>, limit_low: <span class="built_in">bool</span>, limit_high: <span class="built_in">bool</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> i == n:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第 i 个数位可以从 lo 枚举到 hi</span></span><br><span class="line">            <span class="comment"># 如果对数位还有其它约束，应当只在下面的 for 循环做限制，不应修改 lo 或 hi</span></span><br><span class="line">            lo = low[i] <span class="keyword">if</span> limit_low <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            hi = high[i] <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> i &lt; diff:  <span class="comment"># 枚举这个数位填什么</span></span><br><span class="line">                <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo, <span class="built_in">min</span>(hi, limit) + <span class="number">1</span>):</span><br><span class="line">                    res += dfs(i + <span class="number">1</span>, limit_low <span class="keyword">and</span> d == lo, limit_high <span class="keyword">and</span> d == hi)</span><br><span class="line">            <span class="keyword">else</span>:  <span class="comment"># 这个数位只能填 s[i-diff]</span></span><br><span class="line">                x = <span class="built_in">int</span>(s[i - diff])</span><br><span class="line">                <span class="keyword">if</span> lo &lt;= x &lt;= hi:  <span class="comment"># 题目保证 x &lt;= limit，无需判断</span></span><br><span class="line">                    res = dfs(i + <span class="number">1</span>, limit_low <span class="keyword">and</span> x == lo, limit_high <span class="keyword">and</span> x == hi)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>, <span class="literal">True</span>, <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="leetcode-3753-范围内总波动值-II"><a href="#leetcode-3753-范围内总波动值-II" class="headerlink" title="leetcode 3753 范围内总波动值 II"></a>leetcode 3753 范围内总波动值 II</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>给你两个整数num1和num2，表示一个闭区间 $ [num1,num2] $。</p>
 <p><strong>困难</strong></p>
 <p>一个数字的 <strong>波动值</strong> 定义为该数字中 <strong>峰</strong> 和 <strong>谷</strong> 的总数：</p>
 <ul>
@@ -412,12 +439,8 @@ flowchart TD
 </ul>
 <p>返回范围 <code>[num1, num2]</code> 内所有数字的波动值之和。</p>
 <p>1&lt;&#x3D; num1 &lt;&#x3D; num2 &lt;&#x3D; $ 10^{15} $</p>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">totalWaviness</span>(<span class="params">self, num1: <span class="built_in">int</span>, num2: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        low_s = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(num1)))  <span class="comment"># 避免在 dfs 中频繁调用 int()</span></span><br><span class="line">        high_s = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(num2)))</span><br><span class="line">        n = <span class="built_in">len</span>(high_s)</span><br><span class="line">        diff_lh = n - <span class="built_in">len</span>(low_s)</span><br><span class="line"></span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">i: <span class="built_in">int</span>, waviness: <span class="built_in">int</span>, last_cmp: <span class="built_in">int</span>, last_digit: <span class="built_in">int</span>, limit_low: <span class="built_in">bool</span>, limit_high: <span class="built_in">bool</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            <span class="keyword">if</span> i == n:</span><br><span class="line">                <span class="keyword">return</span> waviness</span><br><span class="line"></span><br><span class="line">            lo = low_s[i - diff_lh] <span class="keyword">if</span> limit_low <span class="keyword">and</span> i &gt;= diff_lh <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            hi = high_s[i] <span class="keyword">if</span> limit_high <span class="keyword">else</span> <span class="number">9</span></span><br><span class="line"></span><br><span class="line">            res = <span class="number">0</span></span><br><span class="line">            is_num = <span class="keyword">not</span> limit_low <span class="keyword">or</span> i &gt; diff_lh  <span class="comment"># 前面是否填过数字</span></span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(lo, hi + <span class="number">1</span>):</span><br><span class="line">                <span class="comment"># 当前填的数不是最高位，c 才有意义</span></span><br><span class="line">                c = (d &gt; last_digit) - (d &lt; last_digit) <span class="keyword">if</span> is_num <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">                w = waviness</span><br><span class="line">                <span class="keyword">if</span> c * last_cmp &lt; <span class="number">0</span>:  <span class="comment"># 形成了一个峰或谷</span></span><br><span class="line">                    w += <span class="number">1</span></span><br><span class="line">                res += dfs(i + <span class="number">1</span>, w, c, d, limit_low <span class="keyword">and</span> d == lo, limit_high <span class="keyword">and</span> d == hi)</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="literal">True</span>, <span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>给你三个整数 <code>start</code> ，<code>finish</code> 和 <code>limit</code> 。同时给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，表示一个 <strong>正</strong> 整数。</p>
-<p>如果一个 <strong>正</strong> 整数 <code>x</code> 末尾部分是 <code>s</code> （换句话说，<code>s</code> 是 <code>x</code> 的 <strong>后缀</strong>），且 <code>x</code> 中的每个数位至多是 <code>limit</code> ，那么我们称 <code>x</code> 是 <strong>强大的</strong> 。</p>
-<p>请你返回区间 <code>[start..finish]</code> 内强大整数的 <strong>总数目</strong> 。</p>
-<p>如果一个字符串 <code>x</code> 是 <code>y</code> 中某个下标开始（<strong>包括</strong><code>0</code> ），到下标为 <code>y.length - 1</code> 结束的子字符串，那么我们称 <code>x</code> 是 <code>y</code> 的一个后缀。比方说，<code>25</code> 是 <code>5125</code> 的一个后缀，但不是 <code>512</code> 的后缀。</p>
 
       
     </div>
